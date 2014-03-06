@@ -28,9 +28,85 @@
 var target = UIATarget.localTarget();
 var window = target.frontMostApp().mainWindow();
 
-captureLocalizedScreenshot("screen1");
 
-window.buttons()[0].tap();
-target.delay(0.5);
+var location = {"latitude":48.15188029999999, "longitude":11.561217499999998};
+var locationIsset = target.setLocation(location);
 
-captureLocalizedScreenshot("screen2");
+target.frontMostApp().navigationBar().buttons()["menu inactive"].tap();
+target.delay(1);
+captureLocalizedScreenshot("RearViewController_Hauptansicht");
+
+target.frontMostApp().mainWindow().tableViews()[0].cells()[1].tap();
+target.delay(1);
+captureLocalizedScreenshot("FavoritController");
+
+target.frontMostApp().navigationBar().buttons()["menu inactive"].tap();
+
+target.frontMostApp().mainWindow().tableViews()[0].cells()[4].tap();
+target.delay(1);
+captureLocalizedScreenshot("bpSettingsViewController");
+
+target.frontMostApp().mainWindow().scrollViews()[0].buttons()[0].tap();
+target.delay(1);
+captureLocalizedScreenshot("bpCategoryViewController");
+
+target.frontMostApp().navigationBar().buttons()["backbuttoninactive"].tap();
+
+target.frontMostApp().mainWindow().scrollViews()[0].buttons()[2].tap();
+target.delay(1);
+captureLocalizedScreenshot("bpDebuggingViewController");
+
+target.frontMostApp().navigationBar().buttons()["backbuttoninactive"].tap();target.frontMostApp().navigationBar().buttons()["menu inactive"].tap();
+
+target.frontMostApp().mainWindow().tableViews()[0].cells()[5].tap();
+target.delay(1);
+captureLocalizedScreenshot("bpAboutViewController");
+
+target.frontMostApp().navigationBar().buttons()["menu inactive"].tap();
+
+target.frontMostApp().mainWindow().tableViews()[0].cells()[6].tap();
+target.delay(1);
+captureLocalizedScreenshot("ThinkShareViewController");
+
+target.frontMostApp().mainWindow().images()[2].images()[1].tap();
+// Alert detected. Expressions for handling alerts should be moved into the UIATarget.onAlert function definition.
+target.delay(1);
+captureLocalizedScreenshot("ThinkShareViewController_Facebook");
+target.delay(4);
+
+target.frontMostApp().mainWindow().images()[2].images()[2].tap();
+// Alert detected. Expressions for handling alerts should be moved into the UIATarget.onAlert function definition.
+target.delay(1);
+captureLocalizedScreenshot("ThinkShareViewController_Twitter");
+target.delay(4);
+
+target.frontMostApp().mainWindow().images()[2].images()[3].tap();
+target.delay(1);
+captureLocalizedScreenshot("ThinkShareViewController_Email");
+target.frontMostApp().navigationBar().leftButton().tap();
+target.delay(2);
+target.frontMostApp().actionSheet().buttons()[0].tap();
+target.frontMostApp().navigationBar().tapWithOptions({tapOffset:{x:0.02, y:0.67}});
+target.frontMostApp().mainWindow().tableViews()[0].cells()[0].tap();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
