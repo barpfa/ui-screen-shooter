@@ -107,6 +107,7 @@ function _shoot_screens_for_all_languages {
     bin/choose_sim_language $language
     _run_automation "automation/shoot_the_screens.js"
     _copy_screenshots
+    _create_htmlviewerfile
   done
 }
 
@@ -146,6 +147,46 @@ function _run_automation {
     -e UIARESULTSPATH "$trace_results_dir" \
     -e UIASCRIPT "$1" \
     $*
+}
+
+function _create_htmlviewerfile {
+  # Creates a Html file for viewing the screenshots
+  
+     local file="$destination/index.html"
+
+    if [ ! -f "$file" ] ; then
+         # if not create the file
+         touch "$file"
+    fi
+     
+    echo "<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>iOS Screenshots</title>
+    <style type="text/css">
+    body {
+        margin: 0 auto 20px;
+        padding: 0;
+        background: #eee;
+        text-align: center;
+    }
+    img {
+        display: block;
+        margin: 20px auto 10px;
+        max-width: 900px;
+        outline: none;
+    }
+    </style>
+    </head>
+    <body>" > "$file"
+
+   for img in "$destination"/*.png ; do
+         echo "<h1>$(basename $img)</h1>" >> "$file"
+         echo "<img src=\"$(basename $img)\"></a>" >> "$file"
+    done
+
+    echo "</body>" >> "$file"
+    echo "</html>" >> "$file"
 }
 
 function _copy_screenshots {
