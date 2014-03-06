@@ -29,13 +29,13 @@ destination="$1"
 # The locale identifiers for the languages you want to shoot
 # Use the format like en-US cmn-Hans for filenames compatible with iTunes
 # connect upload tool
-languages="en-US cmn-Hans"
+languages="en-US de-DE"
 
 # The iOS version we want to run the script against
 ios_version="7.0"
 
 # The iOS devices we want to run, can include: iOS-3.5-in, iOS-4-in and/or iOS-iPad
-ios_devices="iOS-3.5-in iOS-4-in iOS-iPad"
+ios_devices="iOS-3.5-in iOS-4-in"
 
 function main {
   _check_destination
