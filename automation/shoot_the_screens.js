@@ -31,7 +31,6 @@ var window = target.frontMostApp().mainWindow();
 
 var location = {"latitude":48.15188029999999, "longitude":11.561217499999998};
 var locationIsset = target.setLocation(location);
-
 target.frontMostApp().navigationBar().buttons()["menu inactive"].tap();
 target.delay(1);
 captureLocalizedScreenshot("RearViewController_Hauptansicht");
@@ -48,7 +47,7 @@ captureLocalizedScreenshot("bpSettingsViewController");
 
 target.frontMostApp().mainWindow().scrollViews()[0].buttons()[0].tap();
 target.delay(1);
-captureLocalizedScreenshot("bpCategoryViewController");
+captureLocalizedScreenshot("bpCategorySettingsViewController");
 
 target.frontMostApp().navigationBar().buttons()["backbuttoninactive"].tap();
 
@@ -64,13 +63,16 @@ captureLocalizedScreenshot("bpAboutViewController");
 
 target.frontMostApp().navigationBar().buttons()["menu inactive"].tap();
 
+//come to Main_View_Share
 target.frontMostApp().mainWindow().tableViews()[0].cells()[6].tap();
 target.delay(1);
 captureLocalizedScreenshot("ThinkShareViewController");
+target.delay(1);
 
+//come to View_Facebook_Share
 target.frontMostApp().mainWindow().images()[2].images()[1].tap();
 // Alert detected. Expressions for handling alerts should be moved into the UIATarget.onAlert function definition.
-target.delay(1);
+target.delay(4);
 captureLocalizedScreenshot("ThinkShareViewController_Facebook");
 target.delay(4);
 
@@ -78,16 +80,61 @@ target.frontMostApp().mainWindow().images()[2].images()[2].tap();
 // Alert detected. Expressions for handling alerts should be moved into the UIATarget.onAlert function definition.
 target.delay(1);
 captureLocalizedScreenshot("ThinkShareViewController_Twitter");
-target.delay(4);
+target.delay(2);
 
 target.frontMostApp().mainWindow().images()[2].images()[3].tap();
 target.delay(1);
 captureLocalizedScreenshot("ThinkShareViewController_Email");
 target.frontMostApp().navigationBar().leftButton().tap();
 target.delay(2);
+
 target.frontMostApp().actionSheet().buttons()[0].tap();
 target.frontMostApp().navigationBar().tapWithOptions({tapOffset:{x:0.02, y:0.67}});
+
+target.frontMostApp().mainWindow().searchBars()[0].tap();
+target.frontMostApp().keyboard().typeString("Fa\n");
+target.delay(5);
+captureLocalizedScreenshot("RearViewController_suche");
+target.delay(1);
+
+target.tap({x:307.50, y:13.00});
 target.frontMostApp().mainWindow().tableViews()[0].cells()[0].tap();
+
+target.delay(1);
+captureLocalizedScreenshot("bpViewController_leer");
+target.delay(1);
+
+//add_thinky_withPlace_selectFavorite_selectPrioriziation_____byADDsymbole
+
+target.frontMostApp().navigationBar().tapWithOptions({tapOffset:{x:0.98, y:0.68}});
+target.frontMostApp().keyboard().typeString("Diaet\n");
+target.frontMostApp().mainWindow().pickers()[0].wheels()[0]. selectValue("ME/HEALTH");
+target.frontMostApp().navigationBar().buttons()[1].tap();
+target.delay(2);
+
+target.frontMostApp().mainWindow().scrollViews()[0].buttons()[3].tap();
+target.delay(2);
+//captureLocalizedScreenshot("MainMapView");
+target.frontMostApp().mainWindow().searchBars()[1].tap();
+target.frontMostApp().keyboard().typeString("Theresienstrasse 89\n");
+target.delay(2);
+captureLocalizedScreenshot("AddMapViewController");
+target.frontMostApp().navigationBar().buttons()[0].tap();
+target.delay(2);
+
+//favorisierung
+target.frontMostApp().mainWindow().scrollViews()[0].buttons()[4].tap();
+target.delay(2);
+captureLocalizedScreenshot("TaskViewController");
+
+//priorisierung
+target.frontMostApp().mainWindow().scrollViews()[0].buttons()[5].tap();
+
+
+target.frontMostApp().navigationBar().buttons()[0].tap();
+target.delay(2);
+captureLocalizedScreenshot("bpViewController");
+
 
 
 
