@@ -4,22 +4,30 @@
 
 
 
-//gotoRearViewControllerHauptansichtAndTakeScreenshoot(true);
+gotoRearViewControllerHauptansichtAndTakeScreenshoot(true);
 
-//gotoFavoritControllerAndTakeScreenshoot(false);
-//gotobpSettingsViewControllerAndTakeScreenshoot(true,false,true);
-//goToThinkShareViewControllerAndTakeScreenshoot(true,true,false,false);
-//gotobpAboutViewControllerAndTakeScreenshoot(true);
-//goToRearViewController_SearchAndTakeScreenshoot(true,"Hund");
-//goTobpViewControllerAndTakeScreenshoot(false);
-//goTo_AddThinky_WithLocationAndTakeScreenshoot(true,"Garten","Dachauer Strasse 135, 80335 München" ,"Hecke schneiden, Rasen mähen, Unkraut rupfen, Gartenzwerg polieren.");
-//goTo_DeleteThinky_FirstScreen_AndTakeScreenshoot(true);
+gotoFavoritControllerAndTakeScreenshoot(true);
+gotobpSettingsViewControllerAndTakeScreenshoot(true,true,true);
+goToThinkShareViewControllerAndTakeScreenshoot(true,true,true,true);
+gotobpAboutViewControllerAndTakeScreenshoot(true);
+goToRearViewController_SearchAndTakeScreenshoot(true,"Hund");
+goTobpViewControllerAndTakeScreenshoot(true);
+goTo_AddThinky_WithLocationAndTakeScreenshoot(true,"Garten","Dachauer Strasse 135, 80335 München" ,"Hecke schneiden, Rasen mähen, Unkraut rupfen, Gartenzwerg polieren.");
+goTo_DeleteThinky_FirstScreen_AndTakeScreenshoot(true);
 goTo_AddThinky_WithTimeAndTakeScreenshoot(true,"Garten","10","33","AM","May","15","2019");
 
+goToCategoryViewControllerAndTakeScreenshoot(true);
 
-
-/*function goTo_AddThinky_WithLocationAndTakeScreenshoot(makeScreenshoot,eventString,searchString,detailString) {
+function goTo_AddThinky_WithLocationAndTakeScreenshoot(makeScreenshoot,eventString,searchString,detailString) {
 	//go to TaskViewController_QuickEdit from bpViewController
+	/*!
+ 	* @function goTo_AddThinky_WithLocationAndTakeScreenshoot
+ 	* @abstract takes a screenshoot from TaskViewController_1 (without placed event) and TaskViewController_2 (with placed event)
+ 	* Use goTo_AddThinky_WithLocationAndTakeScreenshoot to get a current screenshoot of the TaskViewController_1 and TaskViewController_2.
+ 	* @param to get a screenshoot set var makeScreenshot to true and set for var eventString any string you like and set any adress-string for var searchString
+	* in form of streetname and number, zipcode city (e.g. Maximilianstrasse 125, 80539 München) and set any string you like for var detailString for goTo_AddThinky_WithLocationAndTakeScreenshoot.
+ 	*/
+	
 	target.frontMostApp().navigationBar().tapWithOptions({tapOffset:{x:0.96, y:0.40}});
 	target.delay(1);
 	//add eventAndchooseCategory for event
@@ -64,8 +72,13 @@ goTo_AddThinky_WithTimeAndTakeScreenshoot(true,"Garten","10","33","AM","May","15
 }
 
 function goTo_DeleteThinky_FirstScreen_AndTakeScreenshoot(makeScreenshoot) {
-		
-	//call delete_Thinky via pressandhold on bpViewController-
+	//call delete_Thinky via pressandhold on bpViewController
+	/*!
+ 	* @function goTo_DeleteThinky_FirstScreen_AndTakeScreenshoot
+ 	* @abstract takes a screenshoot from bpViewController_Overlay_1 (right delete_bar) and bpViewController_Overlay_2 (bottom delete_bar)
+ 	* Use goTo_DeleteThinky_FirstScreen_AndTakeScreenshoot to get a current screenshoot of the bpViewController_Overlay_1 and bpViewController_Overlay_2.
+ 	* @param to get a screenshoot set var makeScreenshot to true for goTo_AddThinky_WithLocationAndTakeScreenshoot.
+ 	*/
 	
 	target.frontMostApp().mainWindow().scrollViews()[0].scrollViews()[2].textViews()[0].tapWithOptions({tapOffset:{x:0.15, y:0.68}, duration:4.4});
 	
@@ -84,13 +97,21 @@ function goTo_DeleteThinky_FirstScreen_AndTakeScreenshoot(makeScreenshoot) {
 	}
 	target.frontMostApp().mainWindow().buttons()["DELETE"].tap();
 }	
-*/
 
-	//////////
-		 
-//Thinky_depending on time
+
 function goTo_AddThinky_WithTimeAndTakeScreenshoot(makeScreenshoot,eventString,eventHOURstring,eventMINUTEstring,eventDAYTIMEstring,eventEndMONTHstring,eventEndDAYstring,eventEndYEARstring){
 	//go goToTimeSettingsView_All from bpViewController via TaskViewController_QuickEdit
+	//go to TaskViewController_QuickEdit from bpViewController
+	/*!
+ 	* @function goTo_AddThinky_WithTimeAndTakeScreenshoot
+ 	* @abstract takes a screenshoot from TimeSettingsViewController_Overview1(timeoptions not set), TimeSettingsViewController_AlarmTime, TimeSettingsViewController_SetRecurringToDaily, 
+	* TimeSettingsViewController_SetEndTime, TimeSettingsViewController_Overview2(timeoptions set), bpViewController_EventSetWithTimeOptions.
+	* Use goTo_AddThinky_WithTimeAndTakeScreenshoot to get a current screenshoot of the TimeSettingsViewController_Overview1(timeoptions not set), TimeSettingsViewController_AlarmTime,
+	* TimeSettingsViewController_SetRecurringToDaily, TimeSettingsViewController_SetEndTime, TimeSettingsViewController_Overview2(timeoptions set), bpViewController_EventSetWithTimeOptions.
+ 	* @param to get a screenshoot set var makeScreenshot to true, set for var eventString any string you like, set any string(from 1-12) for var eventHOURstring, set any string(from 00-59) for 
+	* var eventMINUTEstring, set any string(AM or PM) for var eventDAYTIMEstring, set any string (January-December) for var eventEndMONTHstring, set any string (1-28/29/30/31) for var eventEndDAYstring,
+	* set any string (2014-endless) for var eventEndYEARstring for goTo_AddThinky_WithTimeAndTakeScreenshoot.
+ 	*/
 	
 	target.frontMostApp().navigationBar().tapWithOptions({tapOffset:{x:0.96, y:0.40}});
 	target.delay(1);
@@ -105,7 +126,8 @@ function goTo_AddThinky_WithTimeAndTakeScreenshoot(makeScreenshoot,eventString,e
 	target.frontMostApp().mainWindow().scrollViews()[0].staticTexts()[0].tap();
 	if(makeScreenshoot == true) {
 		target.delay(1);
-		captureLocalizedScreenshot("TimeSettingsViewController_Overview");
+		//time not set yet
+		captureLocalizedScreenshot("TimeSettingsViewController_Overview1");
 	}
 	//set_AlarmTime
 	target.frontMostApp().mainWindow().scrollViews()[0].buttons()[0].tap();
@@ -128,7 +150,7 @@ function goTo_AddThinky_WithTimeAndTakeScreenshoot(makeScreenshoot,eventString,e
 	target.frontMostApp().navigationBar().buttons()[0].tap();
 																			
 	//set_EndDate
-	target.frontMostApp().mainWindow().scrollViews()[0].dragInsideWithOptions({startOffset:{x:0.97, y:0.58}, endOffset:{x:0.95, y:0.32}, duration:1.4});
+	target.frontMostApp().mainWindow().scrollViews()[0].dragInsideWithOptions({startOffset:{x:0.51, y:0.44}, endOffset:{x:0.50, y:0.27}, duration:2.6});
 	target.frontMostApp().mainWindow().scrollViews()[0].buttons()[2].tap();
 	target.frontMostApp().mainWindow().pickers()[0].wheels()[0].selectValue(eventEndMONTHstring);
 	target.frontMostApp().mainWindow().pickers()[0].wheels()[1].selectValue(eventEndDAYstring);
@@ -137,7 +159,9 @@ function goTo_AddThinky_WithTimeAndTakeScreenshoot(makeScreenshoot,eventString,e
 		target.delay(1);
 		captureLocalizedScreenshot("TimeSettingsViewController_SetEndTime");																		
 	}
-	target.frontMostApp().navigationBar().buttons()[0].tap();
+	target.frontMostApp().navigationBar().buttons()["savebuttoninactive"].tap();
+	target.delay(2);
+	target.frontMostApp().navigationBar().buttons()["savebuttoninactive"].tap();
 	
 	//set_RepeatsUntilCompleted
 	target.frontMostApp().mainWindow().scrollViews()[0].buttons()[2].tap();
@@ -146,53 +170,38 @@ function goTo_AddThinky_WithTimeAndTakeScreenshoot(makeScreenshoot,eventString,e
 		target.delay(1);
 		captureLocalizedScreenshot("TimeSettingsViewController_Overview2");
 	}	
-
+	target.frontMostApp().mainWindow().scrollViews()[0].buttons()[5].tap();
 	target.frontMostApp().navigationBar().buttons()[0].tap();
+	
 	if(makeScreenshoot == true) {
 		target.delay(1);
 		captureLocalizedScreenshot("bpViewController_EventSetWithTimeOptions");
  	}
 }
-/*//set_Alarm_time
 
-target.frontMostApp().windows()[0].scrollViews()[0].buttons()[0].tap();target.frontMostApp()
-.mainWindow().pickers()[0].wheels()[0]. selectValue("8");
-target.frontMostApp().windows()[0].pickers()[0].wheels()[1]. selectValue("20");
-target.frontMostApp().mainWindow().pickers()[0].wheels()[2]. selectValue("AM");
-target.delay(1);
-//captureLocalizedScreenshot("TimeSettingsView_setTime");
-target.frontMostApp().navigationBar().buttons()[0].tap();
-
-//set_Recurring_thinky
-
-target.frontMostApp().windows()[0].scrollViews()[0].buttons()[1].tap();
-target.frontMostApp().windows()[0].pickers()[0].wheels()[1].tap();
-//captureLocalizedScreenshot("TimeSettingsView_setRecurring");
-
-//set_Enddate_thinky
-
-target.frontMostApp().windows()[0].scrollViews()[0].buttons()[2].tap();
-target.frontMostApp().mainWindow().pickers()[0].wheels()[0].selectValue[1];
-target.frontMostApp().windows()[0].pickers()[0].wheels()[1].selectValue("9");
-target.frontMostApp().windows()[0].pickers()[0].wheels()[2].selectValue("2015");
-target.delay(1);
-//captureLocalizedScreenshot("TimeSettingsView_setEnddate");
-target.frontMostApp().navigationBar().buttons()[0].tap();
-//screenshot_all_timeoptions_set
-target.delay(1);
-//captureLocalizedScreenshot("TimeSettingsView_AllSet");
-
-target.frontMostApp().navigationBar().buttons()[0].tap();
-
-//repeatthinky_until_completed
-
-target.frontMostApp().windows()[0].scrollViews()[0].buttons()[2].tap();
-target.delay(1);
-//captureLocalizedScreenshot("TimeSettingsView_AllSet_Repeating");
-target.frontMostApp().navigationBar().buttons()[0].tap();
-*/
-
-
-
-
+function goToCategoryViewControllerAndTakeScreenshoot(makeScreenshoot) {
+	// go to CategoryViewController from bpViewController
+	/*!
+ 	* @function goTo_AddThinky_WithLocationAndTakeScreenshoot
+ 	* @abstract takes a screenshoot from TaskViewController_1 (without placed event) and TaskViewController_2 (with placed event)
+ 	* Use goTo_AddThinky_WithLocationAndTakeScreenshoot to get a current screenshoot of the TaskViewController_1 and TaskViewController_2.
+ 	* @param to get a screenshoot set var makeScreenshot to true and set for var eventString any string you like and set any adress-string for var searchString
+	* in form of streetname and number, zipcode city and set any string you like for var detailString for goTo_AddThinky_WithLocationAndTakeScreenshoot.
+ 	*/
+	target.frontMostApp().mainWindow().scrollViews()[0].buttons()[6].tap();
+	
+	if(makeScreenshoot == true) {
+		target.delay(1);
+		captureLocalizedScreenshot("CategoryViewController_View1");
+ 	}
+	
+	target.frontMostApp().mainWindow().scrollViews()[0].buttons()[0].tap();
+	
+	if(makeScreenshoot == true) {
+		target.delay(1);
+		captureLocalizedScreenshot("CategoryViewController_View2");
+ 	}
+	target.frontMostApp().navigationBar().buttons()["backbuttoninactive"].tap();
+	
+}
 

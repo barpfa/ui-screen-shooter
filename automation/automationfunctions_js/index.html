@@ -1,0 +1,771 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>automationfunctions.js</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style type="text/css"><!--.char {background: #ffffff; color:#0000ff;}.comment {background:#ffffff; color:#236e25}.function {background:#ffffff; color:#000000;}.keyword {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.param {background:#ffffff; color:#000000;}.preprocessor {background:#ffffff; color:#236e25}.string {background: #ffffff; color:#891315;}.template {background:#ffffff; color:#761550;}.type {background:#ffffff; color:#761550;}.var {background:#ffffff; color:#000000;}body {border: 0px; margin: 0px;}div {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}td {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}span.hd_tocAccessSpace { display: block; font-size: 1px; height: 3px; min-height: 3px; }span.hd_tocGroupSpace { display: block; font-size: 1px; height: 3px; min-height: 3px; }span.hd_tocGroup { display: block; font-weight: bold; font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000; margin-left: 0px; padding-left: 40px; }span.hd_tocGroup + span.hd_tocAccess { padding-top: 5px; }td.toc_contents_text {font-size: 11pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000; }li.tocSubEntry {font-size: 11pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}p {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}h2.h2tight { margin-top: 0px; padding-top: 0px; }h1 { margin-top: 13px; padding-top: 0px; }h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}h5 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10.1pt; font-weight: bold;}pre {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666; font-size: 10pt;}pre a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}pre a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}code a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}code a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}tt a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}tt a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}body  {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt; padding-left: 0px; padding-top: 0px; margin-left: 0px; margin-top: 0px; border: none; }#hd_outermost_table { margin-left: 0px; border-spacing: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; }#hd_outermost_table > tbody > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tbody > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-top: 3px; }.afterName { display: none; }.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px; min-height: 12px; vertical-align: middle; }.declaration_indent pre { margin-top: 20px; padding-top: 0px; margin-bottom: 20px; padding-bottom: 0px; }.gapBeforeFooter { display: none; }hr { height: 0px; min-height: 0px; border-top: none; border-left: none; border-right: none; border-bottom: 1px solid #909090;}hr.afterHeader { display: none }.param_group_indent { margin-left: 25px; }.param_indent { margin-left: 40px; margin-top: 0px; padding-top: 0px; }.param_indent dl { margin-top: 4px; padding-top: 0px; }dl dd > p:first-child { margin-top: 2px; padding-top: 0px; }.param_indent dl dd > p:first-child { margin-top: 2px; padding-top: 0px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.note_indent { margin-left: 40px; }h3 {       color: #3C4C6C;}.tight {       margin-top: 2px; margin-bottom: 0px;       padding-top: 0px; padding-bottom: 0px;}h3 a {       color: #3C4C6C;	font-size: 16px;	font-style: normal;	font-variant: normal;	font-weight: bold;	height: 0px;	line-height: normal;}.hd_tocAccess { display: block; margin-left: 40px; font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }.tocSubheading { margin-bottom: 4px; }--></style><style><!--
+body {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+.toc_contents_text {
+    padding-left: 1em;
+    text-indent: -1em;
+}
+
+ul.tocSubEntryList li.tocSubEntry {
+    list-style: none;
+}
+
+#colorbox {
+		display: none;
+}
+.spec_sheet_line {
+		margin-bottom: 1px;
+}
+.collapsible {
+		display: none;
+}
+.toc_leadspace {
+		width: 10; min-width: 10;
+}
+.disclosure_triangle_td {
+		width: 14; min-width: 14;
+		font-size: 10px;
+		vertical-align: middle;
+}
+.specbox td {
+		font-size: 13px;
+}
+.specbox td a {
+		font-size: 13px;
+}
+.specbox td code {
+		font-size: 13px;
+}
+.specbox td tt {
+		font-size: 13px;
+}
+.specbox td pre {
+		font-size: 13px;
+}
+.specbox a {
+		font-size: 12px;
+}
+.disclosure_triangle_td a {
+		text-decoration: none;
+}
+.disclosure_triangle_td a:link {
+		text-decoration: none;
+}
+.disclosure_triangle_td a:active {
+		text-decoration: none;
+}
+.disclosure_triangle_td a:visited:hover {
+		text-decoration: none;
+}
+.disclosure_triangle_td a:hover {
+		text-decoration: none;
+}
+.hd_toc_box {
+		padding-top: 10px;
+		padding-right: 15px;
+}.tocSeparator {
+		margin-top: 15px;
+		padding-bottom: 0px;
+		margin-bottom: 0px;
+}
+.tocSubEntryList {
+		margin-left: 0px;
+		padding-left: 40px;
+		padding-top: 0px;
+		margin-top: 2px;
+		padding-bottom: 0px;
+		margin-bottom: 8px;
+}
+.hd_toc_heading_table {
+		margin-top: 2px;
+		margin-bottom: 2px;
+}
+.hd_toc_entry_table {
+		margin-top: 2px;
+		margin-bottom: 2px;
+}
+.tocSubEntry {
+		margin-left: 0px;
+		padding-left: 0px;
+		margin-top: 0px;
+		margin-bottom: 1px;
+}
+.tocSubEntry a {
+		font-size: 10pt;
+}
+.tocSubheading {
+		padding-left: 14px;
+		margin-left: 0px;
+		margin-top: 5px;
+		padding-top: 0px;
+		font-size: 16px;
+		color: #808080;
+}
+
+#hd_outermost_table { margin-left: 0px; border-spacing: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }
+#hd_outermost_table > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }
+#hd_outermost_table > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; }
+#hd_outermost_table > tbody > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }
+#hd_outermost_table > tbody > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-top: 3px; }
+
+#tocMenu {
+		border-right: 1px solid #c0c0c0;
+		background-color: #f4f4ff;
+		top:0px;
+		left:0px;
+		width:230px;
+		height:100%;
+}
+#bodyContents {
+		width: auto;
+		padding-left: 15px;
+}
+--></style>
+<style id="disable_before_iOS_5"><!--
+#tocMenu {
+		position: fixed;
+		height: 100%;
+		overflow: auto;
+}
+#bodyContents {
+		width: auto;
+		left: 235px;
+		right: 0;
+		padding-left: 15px;
+		position: fixed;
+		height: 100%;
+		overflow-y: scroll;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+    if (navigator.platform && (navigator.platform.match(/iPad/) || navigator.platform.match(/iPhone/) || navigator.platform.match(/iPod/))) {
+        if (navigator.userAgent.match(/OS 1(_\d)+/) ||
+            navigator.userAgent.match(/OS 2(_\d)+/) ||
+            navigator.userAgent.match(/OS 3(_\d)+/) ||
+            navigator.userAgent.match(/OS 4(_\d)+/)) {
+                /* Earlier iOS versions require different scrolling gestures with position: fixed. */
+                var del_style_elt = document.getElementById("disable_before_iOS_5");
+                if (del_style_elt) del_style_elt.parentNode.removeChild(del_style_elt);
+        }
+    }
+// --></script>
+<script language="JavaScript" type="text/javascript"><!--
+function getNewHTTPObject()
+{
+        var xmlhttp;
+
+        /** Special IE only code ... */
+        /*@cc_on
+          @if (@_jscript_version >= 5)
+              try
+              {
+                  xmlhttp = new ActiveXObject('Msxml2.XMLHTTP');
+              }
+              catch (e)
+              {
+                  try
+                  {
+                      xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+                  }
+                  catch (E)
+                  {
+                      xmlhttp = false;
+                  }
+             }
+          @else
+             xmlhttp = false;
+        @end @*/
+
+        /** Every other browser on the planet */
+        if (!xmlhttp && typeof XMLHttpRequest != 'undefined')
+        {
+            try
+            {
+                xmlhttp = new XMLHttpRequest();
+            }
+            catch (e)
+            {
+                xmlhttp = false;
+            }
+        }
+
+        return xmlhttp;
+}
+
+function hidetoc() {
+	var toc = document.getElementById('tocMenu');
+	var src = toc.getAttribute('src');
+	var xhr = getNewHTTPObject();
+	xhr.open('GET', src, true);
+	xhr.onreadystatechange = function() {
+		if(xhr.readyState == 4) {
+			var toc = document.getElementById('tocMenu');
+			toc.innerHTML = xhr.responseText;
+		}
+	}
+	xhr.send(null);
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var body = document.getElementById('bodyContents');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+
+function disclosure_triangle(elt) {
+   var linkelt = elt;
+   while (elt && elt.tagName != 'TABLE') { elt = elt.parentNode;}
+   if (!elt) { return; }
+   while (elt && elt.tagName != 'DIV') { elt = elt.nextSibling;}
+   if (!elt) { return; }
+   if (parseInt(linkelt.getAttribute('state'))) {
+      // It's open.  Close it
+      linkelt.innerHTML = '&#x25B7;';
+      linkelt.setAttribute('state', 0);
+      linkelt.setAttribute('class', 'closed_disclosure_triangle');
+      elt.style.display = 'none';
+   } else {
+      // It's closed.  Open it
+      linkelt.innerHTML = '&#x25BC;';
+      linkelt.setAttribute('state', 1);
+      linkelt.setAttribute('class', 'open_disclosure_triangle');
+      elt.style.display = 'block';
+   }
+}
+--></script>
+<style type="text/css"><!--.char {background: #ffffff; color:#0000ff;}.comment {background:#ffffff; color:#236e25}.function {background:#ffffff; color:#000000;}.keyword {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.param {background:#ffffff; color:#000000;}.preprocessor {background:#ffffff; color:#236e25}.string {background: #ffffff; color:#891315;}.template {background:#ffffff; color:#761550;}.type {background:#ffffff; color:#761550;}.var {background:#ffffff; color:#000000;}body {border: 0px; margin: 0px;}div {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}td {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}span.hd_tocAccessSpace { display: block; font-size: 1px; height: 3px; min-height: 3px; }span.hd_tocGroupSpace { display: block; font-size: 1px; height: 3px; min-height: 3px; }span.hd_tocGroup { display: block; font-weight: bold; font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000; margin-left: 0px; padding-left: 40px; }span.hd_tocGroup + span.hd_tocAccess { padding-top: 5px; }td.toc_contents_text {font-size: 11pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000; }li.tocSubEntry {font-size: 11pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}p {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}h2.h2tight { margin-top: 0px; padding-top: 0px; }h1 { margin-top: 13px; padding-top: 0px; }h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}h5 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10.1pt; font-weight: bold;}pre {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666; font-size: 10pt;}pre a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}pre a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}code a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}code a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}tt a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}tt a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}body  {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt; padding-left: 0px; padding-top: 0px; margin-left: 0px; margin-top: 0px; border: none; }#hd_outermost_table { margin-left: 0px; border-spacing: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; }#hd_outermost_table > tbody > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tbody > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-top: 3px; }.afterName { display: none; }.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px; min-height: 12px; vertical-align: middle; }.declaration_indent pre { margin-top: 20px; padding-top: 0px; margin-bottom: 20px; padding-bottom: 0px; }.gapBeforeFooter { display: none; }hr { height: 0px; min-height: 0px; border-top: none; border-left: none; border-right: none; border-bottom: 1px solid #909090;}hr.afterHeader { display: none }.param_group_indent { margin-left: 25px; }.param_indent { margin-left: 40px; margin-top: 0px; padding-top: 0px; }.param_indent dl { margin-top: 4px; padding-top: 0px; }dl dd > p:first-child { margin-top: 2px; padding-top: 0px; }.param_indent dl dd > p:first-child { margin-top: 2px; padding-top: 0px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.note_indent { margin-left: 40px; }h3 {       color: #3C4C6C;}.tight {       margin-top: 2px; margin-bottom: 0px;       padding-top: 0px; padding-bottom: 0px;}h3 a {       color: #3C4C6C;	font-size: 16px;	font-style: normal;	font-variant: normal;	font-weight: bold;	height: 0px;	line-height: normal;}.hd_tocAccess { display: block; margin-left: 40px; font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }.tocSubheading { margin-bottom: 4px; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();" >
+<!-- headerDoc=Header;  uid=//apple_ref/doc/header/automationfunctions.js;   name=automationfunctions.js -->
+<a name="//apple_ref/doc/header/automationfunctions.js"></a>
+<table id="hd_outermost_table" height="100%" width="100%"><tr><td valign='top' id='tocMenu' src='toc.html'></td>
+<td id='bodyContents' valign='top'>
+<a name="top"></a>
+<h1><a name="automationfunctions.js">automationfunctions.js</a></h1>
+<div class="spec_sheet_info_box"><table cellspacing="0" class="specbox">
+<tr><td scope="row"><b>Includes:</b></td><td><div style="margin-bottom:1px"><div class="content_text"><!-- a logicalPath="//apple_ref/doc/header/capture.js" machineGenerated="true" -->"capture.js"<!-- /a --></div></div></td></tr>
+</table></div>
+<h2>Introduction</h2>
+<p><!-- headerDoc=abstract;uid=//apple_ref/doc/header/automationfunctions.js;name=start --><!-- begin abstract -->Use the links in the table of contents to the left to access the documentation.<br>
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/doc/header/automationfunctions.js;name=end --></p>
+<hr class="afterClassOrHeaderInfo"><br><a name="HeaderDoc_functions"></a>
+<h2 class="h2tight">Functions</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/doc/title:func/gotobpAboutViewControllerAndTakeScreenshoot" target="_top">gotobpAboutViewControllerAndTakeScreenshoot</a></tt></dt>
+<dd><p>takes a screenshoot from bpAboutViewController
+Use gotobpAboutViewControllerAndTakeScreenshoot to get a current screenshoot of the bpAboutViewController.
+</dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:func/gotobpCategorySettingsViewControllerAndTakeScreenshot" target="_top">gotobpCategorySettingsViewControllerAndTakeScreenshot</a></tt></dt>
+<dd><p>takes a screenshoot from bpCategorySettingsViewController
+</dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:func/gotobpDebuggingViewControllerAndTakeScreenshoot" target="_top">gotobpDebuggingViewControllerAndTakeScreenshoot</a></tt></dt>
+<dd><p>takes a screenshoot from bpDebuggingViewController
+</dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:func/gotobpSettingsViewControllerAndTakeScreenshoot" target="_top">gotobpSettingsViewControllerAndTakeScreenshoot</a></tt></dt>
+<dd><p>takes a screenshoot from bpSettingsViewController and its secondarily views
+Use gotobpSettingsViewControllerAndTakeScreenshoot to get a current screenshoot of the bpSettingsViewController and its secondarily 
+views.
+</dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:func/goTobpViewControllerAndTakeScreenshoot" target="_top">goTobpViewControllerAndTakeScreenshoot</a></tt></dt>
+<dd><p>takes a screenshoot from bpViewController
+Use goTobpViewControllerAndTakeScreenshoot to get a current screenshoot of the bpViewController.
+</dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:func/gotoFavoritControllerAndTakeScreenshoot" target="_top">gotoFavoritControllerAndTakeScreenshoot</a></tt></dt>
+<dd><p>takes a screenshoot from FavoritController
+Use gotoFavoritControllerAndTakeScreenshoot to get a current screenshoot of the FavoritController.
+</dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:func/goToRearViewController_SearchAndTakeScreenshoot" target="_top">goToRearViewController_SearchAndTakeScreenshoot</a></tt></dt>
+<dd><p>takes a screenshoot from RearViewController_Search
+Use goToRearViewController_SearchAndTakeScreenshoot to get a current screenshoot of the RearViewController_Search.
+</dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:func/gotoRearViewControllerHauptansichtAndTakeScreenshoot" target="_top">gotoRearViewControllerHauptansichtAndTakeScreenshoot</a></tt></dt>
+<dd><p>takes a screenshoot from RearViewController_Hauptansicht
+Use gotoRearViewControllerHauptansichtAndTakeScreenshoot to get a current screenshoot of the RearViewController_Hauptansicht.
+</dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:func/goToThinkShareViewController_EmailAndTakeScreenshoot" target="_top">goToThinkShareViewController_EmailAndTakeScreenshoot</a></tt></dt>
+<dd><p>takes a screenshoot from ThinkShareViewController_Email.
+</dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:func/goToThinkShareViewController_FacebookAndTakeScreenshoot" target="_top">goToThinkShareViewController_FacebookAndTakeScreenshoot</a></tt></dt>
+<dd><p>takes a screenshoot from ThinkShareViewController_Facebook
+</dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:func/goToThinkShareViewController_TwitterAndTakeScreenshoot" target="_top">goToThinkShareViewController_TwitterAndTakeScreenshoot</a></tt></dt>
+<dd><p>takes a screenshoot from ThinkShareViewController_Twitter
+</dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:func/goToThinkShareViewControllerAndTakeScreenshoot" target="_top">goToThinkShareViewControllerAndTakeScreenshoot</a></tt></dt>
+<dd><p>takes a screenshoot from ThinkShareViewController and its secondarily views
+Use goToThinkShareViewControllerAndTakeScreenshoot to get a current screenshoot of the ThinkShareViewController and its secondarily 
+views.
+</dd>
+<dt><tt><a href="index.html#//apple_ref/js/func/target.frontMostApp" target="_top">target.frontMostApp()</a></tt></dt>
+<dd><p>takes a screenshoot from RearViewController_Hauptansicht
+Use gotoRearViewControllerHauptansichtAndTakeScreenshoot to get a current screenshoot of the RearViewController_Hauptansicht.
+</dd>
+<dt><tt><a href="index.html#//apple_ref/js/func/target.frontMostApp_DONTLINK_1" target="_top">target.frontMostApp()</a></tt></dt>
+<dd><p>takes a screenshoot from bpViewController
+Use goTobpViewControllerAndTakeScreenshoot to get a current screenshoot of the bpViewController.
+</dd>
+<dt><tt><a href="index.html#//apple_ref/js/func/target.frontMostApp_DONTLINK_4" target="_top">target.frontMostApp()</a></tt></dt>
+<dd><p>takes a screenshoot from FavoritController
+Use gotoFavoritControllerAndTakeScreenshoot to get a current screenshoot of the FavoritController.
+</dd>
+<dt><tt><a href="index.html#//apple_ref/js/func/target.frontMostApp_DONTLINK_5" target="_top">target.frontMostApp()</a></tt></dt>
+<dd><p>takes a screenshoot from bpSettingsViewController and its secondarily views
+Use gotobpSettingsViewControllerAndTakeScreenshoot to get a current screenshoot of the bpSettingsViewController and its secondarily 
+views.
+</dd>
+<dt><tt><a href="index.html#//apple_ref/js/func/target.frontMostApp_DONTLINK_8" target="_top">target.frontMostApp()</a></tt></dt>
+<dd><p>takes a screenshoot from bpCategorySettingsViewController
+</dd>
+<dt><tt><a href="index.html#//apple_ref/js/func/target.frontMostApp_DONTLINK_9" target="_top">target.frontMostApp()</a></tt></dt>
+<dd><p>takes a screenshoot from bpDebuggingViewController
+</dd>
+<dt><tt><a href="index.html#//apple_ref/js/func/target.frontMostApp_DONTLINK_12" target="_top">target.frontMostApp()</a></tt></dt>
+<dd><p>takes a screenshoot from bpAboutViewController
+Use gotobpAboutViewControllerAndTakeScreenshoot to get a current screenshoot of the bpAboutViewController.
+</dd>
+<dt><tt><a href="index.html#//apple_ref/js/func/target.frontMostApp_DONTLINK_13" target="_top">target.frontMostApp()</a></tt></dt>
+<dd><p>takes a screenshoot from ThinkShareViewController and its secondarily views
+Use goToThinkShareViewControllerAndTakeScreenshoot to get a current screenshoot of the ThinkShareViewController and its secondarily 
+views.
+</dd>
+<dt><tt><a href="index.html#//apple_ref/js/func/target.frontMostApp_DONTLINK_16" target="_top">target.frontMostApp()</a></tt></dt>
+<dd><p>takes a screenshoot from ThinkShareViewController_Facebook
+</dd>
+<dt><tt><a href="index.html#//apple_ref/js/func/target.frontMostApp_DONTLINK_17" target="_top">target.frontMostApp()</a></tt></dt>
+<dd><p>takes a screenshoot from ThinkShareViewController_Twitter
+</dd>
+<dt><tt><a href="index.html#//apple_ref/js/func/target.frontMostApp_DONTLINK_20" target="_top">target.frontMostApp()</a></tt></dt>
+<dd><p>takes a screenshoot from ThinkShareViewController_Email.
+</dd>
+<dt><tt><a href="index.html#//apple_ref/js/func/target.frontMostApp_DONTLINK_21" target="_top">target.frontMostApp()</a></tt></dt>
+<dd><p>takes a screenshoot from RearViewController_Search
+Use goToRearViewController_SearchAndTakeScreenshoot to get a current screenshoot of the RearViewController_Search.
+</dd>
+</dl>
+<hr class="betweenAPIEntries"><!-- headerDoc=title:func;  uid=//apple_ref/doc/title:func/gotobpAboutViewControllerAndTakeScreenshoot;   name=gotobpAboutViewControllerAndTakeScreenshoot -->
+<a name="//apple_ref/doc/title:func/gotobpAboutViewControllerAndTakeScreenshoot"></a>
+<h3><a name="gotobpAboutViewControllerAndTakeScreenshoot">gotobpAboutViewControllerAndTakeScreenshoot</a></h3>
+<hr class="afterName"><p><!-- headerDoc=abstract;uid=//apple_ref/doc/title:func/gotobpAboutViewControllerAndTakeScreenshoot;name=start --><!-- begin abstract --><p>takes a screenshoot from bpAboutViewController
+Use gotobpAboutViewControllerAndTakeScreenshoot to get a current screenshoot of the bpAboutViewController.
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/doc/title:func/gotobpAboutViewControllerAndTakeScreenshoot;name=end --></p>
+<div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/doc/title:func/gotobpAboutViewControllerAndTakeScreenshoot;name=start --><!-- a logicalPath="//apple_ref/js/econst/target //apple_ref/js/data/target //apple_ref/js/clconst/target " machineGenerated="true" --><span class="var">target</span><!-- /a -->.<!-- a logicalPath="//apple_ref/js/instm/frontMostApp //apple_ref/js/clm/frontMostApp //apple_ref/js/intfcm/frontMostApp //apple_ref/js/intfm/frontMostApp //apple_ref/js/func/frontMostApp //apple_ref/js/ftmplt/frontMostApp //apple_ref/js/defn/frontMostApp //apple_ref/js/macro/frontMostApp //apple_ref/doc/anysymbol/frontMostApp" machineGenerated="true" --><span class="function">frontMostApp</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/mainWindow //apple_ref/js/clm/mainWindow //apple_ref/js/intfcm/mainWindow //apple_ref/js/intfm/mainWindow //apple_ref/js/func/mainWindow //apple_ref/js/ftmplt/mainWindow //apple_ref/js/defn/mainWindow //apple_ref/js/macro/mainWindow //apple_ref/doc/anysymbol/mainWindow" machineGenerated="true" --><span class="function">mainWindow</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/tableViews //apple_ref/js/clm/tableViews //apple_ref/js/intfcm/tableViews //apple_ref/js/intfm/tableViews //apple_ref/js/func/tableViews //apple_ref/js/ftmplt/tableViews //apple_ref/js/defn/tableViews //apple_ref/js/macro/tableViews //apple_ref/doc/anysymbol/tableViews" machineGenerated="true" --><span class="function">tableViews</span><!-- /a -->()[<span class="number">0</span>].<!-- a logicalPath="//apple_ref/js/instm/cells //apple_ref/js/clm/cells //apple_ref/js/intfcm/cells //apple_ref/js/intfm/cells //apple_ref/js/func/cells //apple_ref/js/ftmplt/cells //apple_ref/js/defn/cells //apple_ref/js/macro/cells //apple_ref/doc/anysymbol/cells" machineGenerated="true" --><span class="function">cells</span><!-- /a -->()[<span class="number">5</span>].<!-- a logicalPath="//apple_ref/js/instm/tap //apple_ref/js/clm/tap //apple_ref/js/intfcm/tap //apple_ref/js/intfm/tap //apple_ref/js/func/tap //apple_ref/js/ftmplt/tap //apple_ref/js/defn/tap //apple_ref/js/macro/tap //apple_ref/doc/anysymbol/tap" machineGenerated="true" --><span class="function">tap</span><!-- /a -->();  <!-- headerDoc=declaration;uid=//apple_ref/doc/title:func/gotobpAboutViewControllerAndTakeScreenshoot;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/gotobpAboutViewControllerAndTakeScreenshoot/to;   name=gotobpAboutViewControllerAndTakeScreenshoot::to -->
+<a name="//apple_ref/doc/functionparam/gotobpAboutViewControllerAndTakeScreenshoot/to"></a>
+<code>to</code></dt><dd><p>get a screenshoot set var makeScreenshot for gotobpAboutViewControllerAndTakeScreenshoot to true.</dd>
+</dl>
+</div>
+<hr class="betweenAPIEntries"><!-- headerDoc=title:func;  uid=//apple_ref/doc/title:func/gotobpCategorySettingsViewControllerAndTakeScreenshot;   name=gotobpCategorySettingsViewControllerAndTakeScreenshot -->
+<a name="//apple_ref/doc/title:func/gotobpCategorySettingsViewControllerAndTakeScreenshot"></a>
+<h3><a name="gotobpCategorySettingsViewControllerAndTakeScreenshot">gotobpCategorySettingsViewControllerAndTakeScreenshot</a></h3>
+<hr class="afterName"><p><!-- headerDoc=abstract;uid=//apple_ref/doc/title:func/gotobpCategorySettingsViewControllerAndTakeScreenshot;name=start --><!-- begin abstract --><p>takes a screenshoot from bpCategorySettingsViewController
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/doc/title:func/gotobpCategorySettingsViewControllerAndTakeScreenshot;name=end --></p>
+<div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/doc/title:func/gotobpCategorySettingsViewControllerAndTakeScreenshot;name=start --><!-- a logicalPath="//apple_ref/js/econst/target //apple_ref/js/data/target //apple_ref/js/clconst/target " machineGenerated="true" --><span class="var">target</span><!-- /a -->.<!-- a logicalPath="//apple_ref/js/instm/frontMostApp //apple_ref/js/clm/frontMostApp //apple_ref/js/intfcm/frontMostApp //apple_ref/js/intfm/frontMostApp //apple_ref/js/func/frontMostApp //apple_ref/js/ftmplt/frontMostApp //apple_ref/js/defn/frontMostApp //apple_ref/js/macro/frontMostApp //apple_ref/doc/anysymbol/frontMostApp" machineGenerated="true" --><span class="function">frontMostApp</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/mainWindow //apple_ref/js/clm/mainWindow //apple_ref/js/intfcm/mainWindow //apple_ref/js/intfm/mainWindow //apple_ref/js/func/mainWindow //apple_ref/js/ftmplt/mainWindow //apple_ref/js/defn/mainWindow //apple_ref/js/macro/mainWindow //apple_ref/doc/anysymbol/mainWindow" machineGenerated="true" --><span class="function">mainWindow</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/scrollViews //apple_ref/js/clm/scrollViews //apple_ref/js/intfcm/scrollViews //apple_ref/js/intfm/scrollViews //apple_ref/js/func/scrollViews //apple_ref/js/ftmplt/scrollViews //apple_ref/js/defn/scrollViews //apple_ref/js/macro/scrollViews //apple_ref/doc/anysymbol/scrollViews" machineGenerated="true" --><span class="function">scrollViews</span><!-- /a -->()[<span class="number">0</span>].<!-- a logicalPath="//apple_ref/js/instm/buttons //apple_ref/js/clm/buttons //apple_ref/js/intfcm/buttons //apple_ref/js/intfm/buttons //apple_ref/js/func/buttons //apple_ref/js/ftmplt/buttons //apple_ref/js/defn/buttons //apple_ref/js/macro/buttons //apple_ref/doc/anysymbol/buttons" machineGenerated="true" --><span class="function">buttons</span><!-- /a -->()[<span class="number">0</span>].<!-- a logicalPath="//apple_ref/js/instm/tap //apple_ref/js/clm/tap //apple_ref/js/intfcm/tap //apple_ref/js/intfm/tap //apple_ref/js/func/tap //apple_ref/js/ftmplt/tap //apple_ref/js/defn/tap //apple_ref/js/macro/tap //apple_ref/doc/anysymbol/tap" machineGenerated="true" --><span class="function">tap</span><!-- /a -->();  <!-- headerDoc=declaration;uid=//apple_ref/doc/title:func/gotobpCategorySettingsViewControllerAndTakeScreenshot;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/gotobpCategorySettingsViewControllerAndTakeScreenshot/to;   name=gotobpCategorySettingsViewControllerAndTakeScreenshot::to -->
+<a name="//apple_ref/doc/functionparam/gotobpCategorySettingsViewControllerAndTakeScreenshot/to"></a>
+<code>to</code></dt><dd><p>get a screenshoot set var callCategorySettingsVC in gotobpSettingsViewControllerAndTakeScreenshoot to true.</dd>
+</dl>
+</div>
+<hr class="betweenAPIEntries"><!-- headerDoc=title:func;  uid=//apple_ref/doc/title:func/gotobpDebuggingViewControllerAndTakeScreenshoot;   name=gotobpDebuggingViewControllerAndTakeScreenshoot -->
+<a name="//apple_ref/doc/title:func/gotobpDebuggingViewControllerAndTakeScreenshoot"></a>
+<h3><a name="gotobpDebuggingViewControllerAndTakeScreenshoot">gotobpDebuggingViewControllerAndTakeScreenshoot</a></h3>
+<hr class="afterName"><p><!-- headerDoc=abstract;uid=//apple_ref/doc/title:func/gotobpDebuggingViewControllerAndTakeScreenshoot;name=start --><!-- begin abstract --><p>takes a screenshoot from bpDebuggingViewController
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/doc/title:func/gotobpDebuggingViewControllerAndTakeScreenshoot;name=end --></p>
+<div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/doc/title:func/gotobpDebuggingViewControllerAndTakeScreenshoot;name=start --><!-- a logicalPath="//apple_ref/js/econst/target //apple_ref/js/data/target //apple_ref/js/clconst/target " machineGenerated="true" --><span class="var">target</span><!-- /a -->.<!-- a logicalPath="//apple_ref/js/instm/frontMostApp //apple_ref/js/clm/frontMostApp //apple_ref/js/intfcm/frontMostApp //apple_ref/js/intfm/frontMostApp //apple_ref/js/func/frontMostApp //apple_ref/js/ftmplt/frontMostApp //apple_ref/js/defn/frontMostApp //apple_ref/js/macro/frontMostApp //apple_ref/doc/anysymbol/frontMostApp" machineGenerated="true" --><span class="function">frontMostApp</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/mainWindow //apple_ref/js/clm/mainWindow //apple_ref/js/intfcm/mainWindow //apple_ref/js/intfm/mainWindow //apple_ref/js/func/mainWindow //apple_ref/js/ftmplt/mainWindow //apple_ref/js/defn/mainWindow //apple_ref/js/macro/mainWindow //apple_ref/doc/anysymbol/mainWindow" machineGenerated="true" --><span class="function">mainWindow</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/scrollViews //apple_ref/js/clm/scrollViews //apple_ref/js/intfcm/scrollViews //apple_ref/js/intfm/scrollViews //apple_ref/js/func/scrollViews //apple_ref/js/ftmplt/scrollViews //apple_ref/js/defn/scrollViews //apple_ref/js/macro/scrollViews //apple_ref/doc/anysymbol/scrollViews" machineGenerated="true" --><span class="function">scrollViews</span><!-- /a -->()[<span class="number">0</span>].<!-- a logicalPath="//apple_ref/js/instm/buttons //apple_ref/js/clm/buttons //apple_ref/js/intfcm/buttons //apple_ref/js/intfm/buttons //apple_ref/js/func/buttons //apple_ref/js/ftmplt/buttons //apple_ref/js/defn/buttons //apple_ref/js/macro/buttons //apple_ref/doc/anysymbol/buttons" machineGenerated="true" --><span class="function">buttons</span><!-- /a -->()[<span class="number">2</span>].<!-- a logicalPath="//apple_ref/js/instm/tap //apple_ref/js/clm/tap //apple_ref/js/intfcm/tap //apple_ref/js/intfm/tap //apple_ref/js/func/tap //apple_ref/js/ftmplt/tap //apple_ref/js/defn/tap //apple_ref/js/macro/tap //apple_ref/doc/anysymbol/tap" machineGenerated="true" --><span class="function">tap</span><!-- /a -->();  <!-- headerDoc=declaration;uid=//apple_ref/doc/title:func/gotobpDebuggingViewControllerAndTakeScreenshoot;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/gotobpDebuggingViewControllerAndTakeScreenshoot/to;   name=gotobpDebuggingViewControllerAndTakeScreenshoot::to -->
+<a name="//apple_ref/doc/functionparam/gotobpDebuggingViewControllerAndTakeScreenshoot/to"></a>
+<code>to</code></dt><dd><p>get a screenshoot set var callDebuggingVC in gotobpSettingsViewControllerAndTakeScreenshoot to true.</dd>
+</dl>
+</div>
+<hr class="betweenAPIEntries"><!-- headerDoc=title:func;  uid=//apple_ref/doc/title:func/gotobpSettingsViewControllerAndTakeScreenshoot;   name=gotobpSettingsViewControllerAndTakeScreenshoot -->
+<a name="//apple_ref/doc/title:func/gotobpSettingsViewControllerAndTakeScreenshoot"></a>
+<h3><a name="gotobpSettingsViewControllerAndTakeScreenshoot">gotobpSettingsViewControllerAndTakeScreenshoot</a></h3>
+<hr class="afterName"><p><!-- headerDoc=abstract;uid=//apple_ref/doc/title:func/gotobpSettingsViewControllerAndTakeScreenshoot;name=start --><!-- begin abstract --><p>takes a screenshoot from bpSettingsViewController and its secondarily views
+Use gotobpSettingsViewControllerAndTakeScreenshoot to get a current screenshoot of the bpSettingsViewController and its secondarily 
+views.
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/doc/title:func/gotobpSettingsViewControllerAndTakeScreenshoot;name=end --></p>
+<div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/doc/title:func/gotobpSettingsViewControllerAndTakeScreenshoot;name=start --><!-- a logicalPath="//apple_ref/js/econst/target //apple_ref/js/data/target //apple_ref/js/clconst/target " machineGenerated="true" --><span class="var">target</span><!-- /a -->.<!-- a logicalPath="//apple_ref/js/instm/frontMostApp //apple_ref/js/clm/frontMostApp //apple_ref/js/intfcm/frontMostApp //apple_ref/js/intfm/frontMostApp //apple_ref/js/func/frontMostApp //apple_ref/js/ftmplt/frontMostApp //apple_ref/js/defn/frontMostApp //apple_ref/js/macro/frontMostApp //apple_ref/doc/anysymbol/frontMostApp" machineGenerated="true" --><span class="function">frontMostApp</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/mainWindow //apple_ref/js/clm/mainWindow //apple_ref/js/intfcm/mainWindow //apple_ref/js/intfm/mainWindow //apple_ref/js/func/mainWindow //apple_ref/js/ftmplt/mainWindow //apple_ref/js/defn/mainWindow //apple_ref/js/macro/mainWindow //apple_ref/doc/anysymbol/mainWindow" machineGenerated="true" --><span class="function">mainWindow</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/tableViews //apple_ref/js/clm/tableViews //apple_ref/js/intfcm/tableViews //apple_ref/js/intfm/tableViews //apple_ref/js/func/tableViews //apple_ref/js/ftmplt/tableViews //apple_ref/js/defn/tableViews //apple_ref/js/macro/tableViews //apple_ref/doc/anysymbol/tableViews" machineGenerated="true" --><span class="function">tableViews</span><!-- /a -->()[<span class="number">0</span>].<!-- a logicalPath="//apple_ref/js/instm/cells //apple_ref/js/clm/cells //apple_ref/js/intfcm/cells //apple_ref/js/intfm/cells //apple_ref/js/func/cells //apple_ref/js/ftmplt/cells //apple_ref/js/defn/cells //apple_ref/js/macro/cells //apple_ref/doc/anysymbol/cells" machineGenerated="true" --><span class="function">cells</span><!-- /a -->()[<span class="number">4</span>].<!-- a logicalPath="//apple_ref/js/instm/tap //apple_ref/js/clm/tap //apple_ref/js/intfcm/tap //apple_ref/js/intfm/tap //apple_ref/js/func/tap //apple_ref/js/ftmplt/tap //apple_ref/js/defn/tap //apple_ref/js/macro/tap //apple_ref/doc/anysymbol/tap" machineGenerated="true" --><span class="function">tap</span><!-- /a -->();  <!-- headerDoc=declaration;uid=//apple_ref/doc/title:func/gotobpSettingsViewControllerAndTakeScreenshoot;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/gotobpSettingsViewControllerAndTakeScreenshoot/to;   name=gotobpSettingsViewControllerAndTakeScreenshoot::to -->
+<a name="//apple_ref/doc/functionparam/gotobpSettingsViewControllerAndTakeScreenshoot/to"></a>
+<code>to</code></dt><dd><p>get these screenshoots set var makeScreenshoot,var callDebuggingVC,var callCategorySettingsVC for gotobpSettingsViewControllerAndTakeScreenshoot 
+to true,true,true.</dd>
+</dl>
+</div>
+<hr class="betweenAPIEntries"><!-- headerDoc=title:func;  uid=//apple_ref/doc/title:func/goTobpViewControllerAndTakeScreenshoot;   name=goTobpViewControllerAndTakeScreenshoot -->
+<a name="//apple_ref/doc/title:func/goTobpViewControllerAndTakeScreenshoot"></a>
+<h3><a name="goTobpViewControllerAndTakeScreenshoot">goTobpViewControllerAndTakeScreenshoot</a></h3>
+<hr class="afterName"><p><!-- headerDoc=abstract;uid=//apple_ref/doc/title:func/goTobpViewControllerAndTakeScreenshoot;name=start --><!-- begin abstract --><p>takes a screenshoot from bpViewController
+Use goTobpViewControllerAndTakeScreenshoot to get a current screenshoot of the bpViewController.
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/doc/title:func/goTobpViewControllerAndTakeScreenshoot;name=end --></p>
+<div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/doc/title:func/goTobpViewControllerAndTakeScreenshoot;name=start --><!-- a logicalPath="//apple_ref/js/econst/target //apple_ref/js/data/target //apple_ref/js/clconst/target " machineGenerated="true" --><span class="var">target</span><!-- /a -->.<!-- a logicalPath="//apple_ref/js/instm/frontMostApp //apple_ref/js/clm/frontMostApp //apple_ref/js/intfcm/frontMostApp //apple_ref/js/intfm/frontMostApp //apple_ref/js/func/frontMostApp //apple_ref/js/ftmplt/frontMostApp //apple_ref/js/defn/frontMostApp //apple_ref/js/macro/frontMostApp //apple_ref/doc/anysymbol/frontMostApp" machineGenerated="true" --><span class="function">frontMostApp</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/mainWindow //apple_ref/js/clm/mainWindow //apple_ref/js/intfcm/mainWindow //apple_ref/js/intfm/mainWindow //apple_ref/js/func/mainWindow //apple_ref/js/ftmplt/mainWindow //apple_ref/js/defn/mainWindow //apple_ref/js/macro/mainWindow //apple_ref/doc/anysymbol/mainWindow" machineGenerated="true" --><span class="function">mainWindow</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/tableViews //apple_ref/js/clm/tableViews //apple_ref/js/intfcm/tableViews //apple_ref/js/intfm/tableViews //apple_ref/js/func/tableViews //apple_ref/js/ftmplt/tableViews //apple_ref/js/defn/tableViews //apple_ref/js/macro/tableViews //apple_ref/doc/anysymbol/tableViews" machineGenerated="true" --><span class="function">tableViews</span><!-- /a -->()[<span class="number">0</span>].<!-- a logicalPath="//apple_ref/js/instm/cells //apple_ref/js/clm/cells //apple_ref/js/intfcm/cells //apple_ref/js/intfm/cells //apple_ref/js/func/cells //apple_ref/js/ftmplt/cells //apple_ref/js/defn/cells //apple_ref/js/macro/cells //apple_ref/doc/anysymbol/cells" machineGenerated="true" --><span class="function">cells</span><!-- /a -->()[<span class="number">0</span>].<!-- a logicalPath="//apple_ref/js/instm/tap //apple_ref/js/clm/tap //apple_ref/js/intfcm/tap //apple_ref/js/intfm/tap //apple_ref/js/func/tap //apple_ref/js/ftmplt/tap //apple_ref/js/defn/tap //apple_ref/js/macro/tap //apple_ref/doc/anysymbol/tap" machineGenerated="true" --><span class="function">tap</span><!-- /a -->();  <!-- headerDoc=declaration;uid=//apple_ref/doc/title:func/goTobpViewControllerAndTakeScreenshoot;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/goTobpViewControllerAndTakeScreenshoot/to;   name=goTobpViewControllerAndTakeScreenshoot::to -->
+<a name="//apple_ref/doc/functionparam/goTobpViewControllerAndTakeScreenshoot/to"></a>
+<code>to</code></dt><dd><p>get a screenshoot set var makeScreenshot for goTobpViewControllerAndTakeScreenshoot to true.</dd>
+</dl>
+</div>
+<hr class="betweenAPIEntries"><!-- headerDoc=title:func;  uid=//apple_ref/doc/title:func/gotoFavoritControllerAndTakeScreenshoot;   name=gotoFavoritControllerAndTakeScreenshoot -->
+<a name="//apple_ref/doc/title:func/gotoFavoritControllerAndTakeScreenshoot"></a>
+<h3><a name="gotoFavoritControllerAndTakeScreenshoot">gotoFavoritControllerAndTakeScreenshoot</a></h3>
+<hr class="afterName"><p><!-- headerDoc=abstract;uid=//apple_ref/doc/title:func/gotoFavoritControllerAndTakeScreenshoot;name=start --><!-- begin abstract --><p>takes a screenshoot from FavoritController
+Use gotoFavoritControllerAndTakeScreenshoot to get a current screenshoot of the FavoritController.
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/doc/title:func/gotoFavoritControllerAndTakeScreenshoot;name=end --></p>
+<div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/doc/title:func/gotoFavoritControllerAndTakeScreenshoot;name=start --><!-- a logicalPath="//apple_ref/js/econst/target //apple_ref/js/data/target //apple_ref/js/clconst/target " machineGenerated="true" --><span class="var">target</span><!-- /a -->.<!-- a logicalPath="//apple_ref/js/instm/frontMostApp //apple_ref/js/clm/frontMostApp //apple_ref/js/intfcm/frontMostApp //apple_ref/js/intfm/frontMostApp //apple_ref/js/func/frontMostApp //apple_ref/js/ftmplt/frontMostApp //apple_ref/js/defn/frontMostApp //apple_ref/js/macro/frontMostApp //apple_ref/doc/anysymbol/frontMostApp" machineGenerated="true" --><span class="function">frontMostApp</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/mainWindow //apple_ref/js/clm/mainWindow //apple_ref/js/intfcm/mainWindow //apple_ref/js/intfm/mainWindow //apple_ref/js/func/mainWindow //apple_ref/js/ftmplt/mainWindow //apple_ref/js/defn/mainWindow //apple_ref/js/macro/mainWindow //apple_ref/doc/anysymbol/mainWindow" machineGenerated="true" --><span class="function">mainWindow</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/tableViews //apple_ref/js/clm/tableViews //apple_ref/js/intfcm/tableViews //apple_ref/js/intfm/tableViews //apple_ref/js/func/tableViews //apple_ref/js/ftmplt/tableViews //apple_ref/js/defn/tableViews //apple_ref/js/macro/tableViews //apple_ref/doc/anysymbol/tableViews" machineGenerated="true" --><span class="function">tableViews</span><!-- /a -->()[<span class="number">0</span>].<!-- a logicalPath="//apple_ref/js/instm/cells //apple_ref/js/clm/cells //apple_ref/js/intfcm/cells //apple_ref/js/intfm/cells //apple_ref/js/func/cells //apple_ref/js/ftmplt/cells //apple_ref/js/defn/cells //apple_ref/js/macro/cells //apple_ref/doc/anysymbol/cells" machineGenerated="true" --><span class="function">cells</span><!-- /a -->()[<span class="number">1</span>].<!-- a logicalPath="//apple_ref/js/instm/tap //apple_ref/js/clm/tap //apple_ref/js/intfcm/tap //apple_ref/js/intfm/tap //apple_ref/js/func/tap //apple_ref/js/ftmplt/tap //apple_ref/js/defn/tap //apple_ref/js/macro/tap //apple_ref/doc/anysymbol/tap" machineGenerated="true" --><span class="function">tap</span><!-- /a -->();  <!-- headerDoc=declaration;uid=//apple_ref/doc/title:func/gotoFavoritControllerAndTakeScreenshoot;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/gotoFavoritControllerAndTakeScreenshoot/to;   name=gotoFavoritControllerAndTakeScreenshoot::to -->
+<a name="//apple_ref/doc/functionparam/gotoFavoritControllerAndTakeScreenshoot/to"></a>
+<code>to</code></dt><dd><p>get a screenshoot set var makeScreenshot for gotoFavoritControllerAndTakeScreenshoot to true.</dd>
+</dl>
+</div>
+<hr class="betweenAPIEntries"><!-- headerDoc=title:func;  uid=//apple_ref/doc/title:func/goToRearViewController_SearchAndTakeScreenshoot;   name=goToRearViewController_SearchAndTakeScreenshoot -->
+<a name="//apple_ref/doc/title:func/goToRearViewController_SearchAndTakeScreenshoot"></a>
+<h3><a name="goToRearViewController_SearchAndTakeScreenshoot">goToRearViewController_SearchAndTakeScreenshoot</a></h3>
+<hr class="afterName"><p><!-- headerDoc=abstract;uid=//apple_ref/doc/title:func/goToRearViewController_SearchAndTakeScreenshoot;name=start --><!-- begin abstract --><p>takes a screenshoot from RearViewController_Search
+Use goToRearViewController_SearchAndTakeScreenshoot to get a current screenshoot of the RearViewController_Search.
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/doc/title:func/goToRearViewController_SearchAndTakeScreenshoot;name=end --></p>
+<div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/doc/title:func/goToRearViewController_SearchAndTakeScreenshoot;name=start --><!-- a logicalPath="//apple_ref/js/econst/target //apple_ref/js/data/target //apple_ref/js/clconst/target " machineGenerated="true" --><span class="var">target</span><!-- /a -->.<!-- a logicalPath="//apple_ref/js/instm/frontMostApp //apple_ref/js/clm/frontMostApp //apple_ref/js/intfcm/frontMostApp //apple_ref/js/intfm/frontMostApp //apple_ref/js/func/frontMostApp //apple_ref/js/ftmplt/frontMostApp //apple_ref/js/defn/frontMostApp //apple_ref/js/macro/frontMostApp //apple_ref/doc/anysymbol/frontMostApp" machineGenerated="true" --><span class="function">frontMostApp</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/mainWindow //apple_ref/js/clm/mainWindow //apple_ref/js/intfcm/mainWindow //apple_ref/js/intfm/mainWindow //apple_ref/js/func/mainWindow //apple_ref/js/ftmplt/mainWindow //apple_ref/js/defn/mainWindow //apple_ref/js/macro/mainWindow //apple_ref/doc/anysymbol/mainWindow" machineGenerated="true" --><span class="function">mainWindow</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/searchBars //apple_ref/js/clm/searchBars //apple_ref/js/intfcm/searchBars //apple_ref/js/intfm/searchBars //apple_ref/js/func/searchBars //apple_ref/js/ftmplt/searchBars //apple_ref/js/defn/searchBars //apple_ref/js/macro/searchBars //apple_ref/doc/anysymbol/searchBars" machineGenerated="true" --><span class="function">searchBars</span><!-- /a -->()[<span class="number">0</span>].<!-- a logicalPath="//apple_ref/js/instm/tap //apple_ref/js/clm/tap //apple_ref/js/intfcm/tap //apple_ref/js/intfm/tap //apple_ref/js/func/tap //apple_ref/js/ftmplt/tap //apple_ref/js/defn/tap //apple_ref/js/macro/tap //apple_ref/doc/anysymbol/tap" machineGenerated="true" --><span class="function">tap</span><!-- /a -->();  <!-- headerDoc=declaration;uid=//apple_ref/doc/title:func/goToRearViewController_SearchAndTakeScreenshoot;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/goToRearViewController_SearchAndTakeScreenshoot/to;   name=goToRearViewController_SearchAndTakeScreenshoot::to -->
+<a name="//apple_ref/doc/functionparam/goToRearViewController_SearchAndTakeScreenshoot/to"></a>
+<code>to</code></dt><dd><p>get a screenshoot set var makeScreenshot for goToRearViewController_SearchAndTakeScreenshoot to true and set any string you want for 
+var searchstring.</dd>
+</dl>
+</div>
+<hr class="betweenAPIEntries"><!-- headerDoc=title:func;  uid=//apple_ref/doc/title:func/gotoRearViewControllerHauptansichtAndTakeScreenshoot;   name=gotoRearViewControllerHauptansichtAndTakeScreenshoot -->
+<a name="//apple_ref/doc/title:func/gotoRearViewControllerHauptansichtAndTakeScreenshoot"></a>
+<h3><a name="gotoRearViewControllerHauptansichtAndTakeScreenshoot">gotoRearViewControllerHauptansichtAndTakeScreenshoot</a></h3>
+<hr class="afterName"><p><!-- headerDoc=abstract;uid=//apple_ref/doc/title:func/gotoRearViewControllerHauptansichtAndTakeScreenshoot;name=start --><!-- begin abstract --><p>takes a screenshoot from RearViewController_Hauptansicht
+Use gotoRearViewControllerHauptansichtAndTakeScreenshoot to get a current screenshoot of the RearViewController_Hauptansicht.
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/doc/title:func/gotoRearViewControllerHauptansichtAndTakeScreenshoot;name=end --></p>
+<div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/doc/title:func/gotoRearViewControllerHauptansichtAndTakeScreenshoot;name=start --><!-- a logicalPath="//apple_ref/js/econst/target //apple_ref/js/data/target //apple_ref/js/clconst/target " machineGenerated="true" --><span class="var">target</span><!-- /a -->.<!-- a logicalPath="//apple_ref/js/instm/frontMostApp //apple_ref/js/clm/frontMostApp //apple_ref/js/intfcm/frontMostApp //apple_ref/js/intfm/frontMostApp //apple_ref/js/func/frontMostApp //apple_ref/js/ftmplt/frontMostApp //apple_ref/js/defn/frontMostApp //apple_ref/js/macro/frontMostApp //apple_ref/doc/anysymbol/frontMostApp" machineGenerated="true" --><span class="function">frontMostApp</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/navigationBar //apple_ref/js/clm/navigationBar //apple_ref/js/intfcm/navigationBar //apple_ref/js/intfm/navigationBar //apple_ref/js/func/navigationBar //apple_ref/js/ftmplt/navigationBar //apple_ref/js/defn/navigationBar //apple_ref/js/macro/navigationBar //apple_ref/doc/anysymbol/navigationBar" machineGenerated="true" --><span class="function">navigationBar</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/buttons //apple_ref/js/clm/buttons //apple_ref/js/intfcm/buttons //apple_ref/js/intfm/buttons //apple_ref/js/func/buttons //apple_ref/js/ftmplt/buttons //apple_ref/js/defn/buttons //apple_ref/js/macro/buttons //apple_ref/doc/anysymbol/buttons" machineGenerated="true" --><span class="function">buttons</span><!-- /a -->()["<span class="string">menu</span> <span class="string">inactive</span>"].<!-- a logicalPath="//apple_ref/js/instm/tap //apple_ref/js/clm/tap //apple_ref/js/intfcm/tap //apple_ref/js/intfm/tap //apple_ref/js/func/tap //apple_ref/js/ftmplt/tap //apple_ref/js/defn/tap //apple_ref/js/macro/tap //apple_ref/doc/anysymbol/tap" machineGenerated="true" --><span class="function">tap</span><!-- /a -->();  <!-- headerDoc=declaration;uid=//apple_ref/doc/title:func/gotoRearViewControllerHauptansichtAndTakeScreenshoot;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/gotoRearViewControllerHauptansichtAndTakeScreenshoot/to;   name=gotoRearViewControllerHauptansichtAndTakeScreenshoot::to -->
+<a name="//apple_ref/doc/functionparam/gotoRearViewControllerHauptansichtAndTakeScreenshoot/to"></a>
+<code>to</code></dt><dd><p>get a screenshoot set var makeScreenshot for gotoRearViewControllerHauptansichtAndTakeScreenshoot to true.</dd>
+</dl>
+</div>
+<hr class="betweenAPIEntries"><!-- headerDoc=title:func;  uid=//apple_ref/doc/title:func/goToThinkShareViewController_EmailAndTakeScreenshoot;   name=goToThinkShareViewController_EmailAndTakeScreenshoot -->
+<a name="//apple_ref/doc/title:func/goToThinkShareViewController_EmailAndTakeScreenshoot"></a>
+<h3><a name="goToThinkShareViewController_EmailAndTakeScreenshoot">goToThinkShareViewController_EmailAndTakeScreenshoot</a></h3>
+<hr class="afterName"><p><!-- headerDoc=abstract;uid=//apple_ref/doc/title:func/goToThinkShareViewController_EmailAndTakeScreenshoot;name=start --><!-- begin abstract --><p>takes a screenshoot from ThinkShareViewController_Email.
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/doc/title:func/goToThinkShareViewController_EmailAndTakeScreenshoot;name=end --></p>
+<div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/doc/title:func/goToThinkShareViewController_EmailAndTakeScreenshoot;name=start --><!-- a logicalPath="//apple_ref/js/econst/target //apple_ref/js/data/target //apple_ref/js/clconst/target " machineGenerated="true" --><span class="var">target</span><!-- /a -->.<!-- a logicalPath="//apple_ref/js/instm/frontMostApp //apple_ref/js/clm/frontMostApp //apple_ref/js/intfcm/frontMostApp //apple_ref/js/intfm/frontMostApp //apple_ref/js/func/frontMostApp //apple_ref/js/ftmplt/frontMostApp //apple_ref/js/defn/frontMostApp //apple_ref/js/macro/frontMostApp //apple_ref/doc/anysymbol/frontMostApp" machineGenerated="true" --><span class="function">frontMostApp</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/mainWindow //apple_ref/js/clm/mainWindow //apple_ref/js/intfcm/mainWindow //apple_ref/js/intfm/mainWindow //apple_ref/js/func/mainWindow //apple_ref/js/ftmplt/mainWindow //apple_ref/js/defn/mainWindow //apple_ref/js/macro/mainWindow //apple_ref/doc/anysymbol/mainWindow" machineGenerated="true" --><span class="function">mainWindow</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/images //apple_ref/js/clm/images //apple_ref/js/intfcm/images //apple_ref/js/intfm/images //apple_ref/js/func/images //apple_ref/js/ftmplt/images //apple_ref/js/defn/images //apple_ref/js/macro/images //apple_ref/doc/anysymbol/images" machineGenerated="true" --><span class="function">images</span><!-- /a -->()[<span class="number">2</span>].<!-- a logicalPath="//apple_ref/js/instm/images //apple_ref/js/clm/images //apple_ref/js/intfcm/images //apple_ref/js/intfm/images //apple_ref/js/func/images //apple_ref/js/ftmplt/images //apple_ref/js/defn/images //apple_ref/js/macro/images //apple_ref/doc/anysymbol/images" machineGenerated="true" --><span class="function">images</span><!-- /a -->()[<span class="number">3</span>].<!-- a logicalPath="//apple_ref/js/instm/tap //apple_ref/js/clm/tap //apple_ref/js/intfcm/tap //apple_ref/js/intfm/tap //apple_ref/js/func/tap //apple_ref/js/ftmplt/tap //apple_ref/js/defn/tap //apple_ref/js/macro/tap //apple_ref/doc/anysymbol/tap" machineGenerated="true" --><span class="function">tap</span><!-- /a -->();  <!-- headerDoc=declaration;uid=//apple_ref/doc/title:func/goToThinkShareViewController_EmailAndTakeScreenshoot;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/goToThinkShareViewController_EmailAndTakeScreenshoot/to;   name=goToThinkShareViewController_EmailAndTakeScreenshoot::to -->
+<a name="//apple_ref/doc/functionparam/goToThinkShareViewController_EmailAndTakeScreenshoot/to"></a>
+<code>to</code></dt><dd><p>get a screenshoot set var callEmailVC in goToThinkShareViewControllerAndTakeScreenshoot to true.</dd>
+</dl>
+</div>
+<hr class="betweenAPIEntries"><!-- headerDoc=title:func;  uid=//apple_ref/doc/title:func/goToThinkShareViewController_FacebookAndTakeScreenshoot;   name=goToThinkShareViewController_FacebookAndTakeScreenshoot -->
+<a name="//apple_ref/doc/title:func/goToThinkShareViewController_FacebookAndTakeScreenshoot"></a>
+<h3><a name="goToThinkShareViewController_FacebookAndTakeScreenshoot">goToThinkShareViewController_FacebookAndTakeScreenshoot</a></h3>
+<hr class="afterName"><p><!-- headerDoc=abstract;uid=//apple_ref/doc/title:func/goToThinkShareViewController_FacebookAndTakeScreenshoot;name=start --><!-- begin abstract --><p>takes a screenshoot from ThinkShareViewController_Facebook
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/doc/title:func/goToThinkShareViewController_FacebookAndTakeScreenshoot;name=end --></p>
+<div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/doc/title:func/goToThinkShareViewController_FacebookAndTakeScreenshoot;name=start --><!-- a logicalPath="//apple_ref/js/econst/target //apple_ref/js/data/target //apple_ref/js/clconst/target " machineGenerated="true" --><span class="var">target</span><!-- /a -->.<!-- a logicalPath="//apple_ref/js/instm/frontMostApp //apple_ref/js/clm/frontMostApp //apple_ref/js/intfcm/frontMostApp //apple_ref/js/intfm/frontMostApp //apple_ref/js/func/frontMostApp //apple_ref/js/ftmplt/frontMostApp //apple_ref/js/defn/frontMostApp //apple_ref/js/macro/frontMostApp //apple_ref/doc/anysymbol/frontMostApp" machineGenerated="true" --><span class="function">frontMostApp</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/mainWindow //apple_ref/js/clm/mainWindow //apple_ref/js/intfcm/mainWindow //apple_ref/js/intfm/mainWindow //apple_ref/js/func/mainWindow //apple_ref/js/ftmplt/mainWindow //apple_ref/js/defn/mainWindow //apple_ref/js/macro/mainWindow //apple_ref/doc/anysymbol/mainWindow" machineGenerated="true" --><span class="function">mainWindow</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/images //apple_ref/js/clm/images //apple_ref/js/intfcm/images //apple_ref/js/intfm/images //apple_ref/js/func/images //apple_ref/js/ftmplt/images //apple_ref/js/defn/images //apple_ref/js/macro/images //apple_ref/doc/anysymbol/images" machineGenerated="true" --><span class="function">images</span><!-- /a -->()[<span class="number">2</span>].<!-- a logicalPath="//apple_ref/js/instm/images //apple_ref/js/clm/images //apple_ref/js/intfcm/images //apple_ref/js/intfm/images //apple_ref/js/func/images //apple_ref/js/ftmplt/images //apple_ref/js/defn/images //apple_ref/js/macro/images //apple_ref/doc/anysymbol/images" machineGenerated="true" --><span class="function">images</span><!-- /a -->()[<span class="number">1</span>].<!-- a logicalPath="//apple_ref/js/instm/tap //apple_ref/js/clm/tap //apple_ref/js/intfcm/tap //apple_ref/js/intfm/tap //apple_ref/js/func/tap //apple_ref/js/ftmplt/tap //apple_ref/js/defn/tap //apple_ref/js/macro/tap //apple_ref/doc/anysymbol/tap" machineGenerated="true" --><span class="function">tap</span><!-- /a -->();  <!-- headerDoc=declaration;uid=//apple_ref/doc/title:func/goToThinkShareViewController_FacebookAndTakeScreenshoot;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/goToThinkShareViewController_FacebookAndTakeScreenshoot/to;   name=goToThinkShareViewController_FacebookAndTakeScreenshoot::to -->
+<a name="//apple_ref/doc/functionparam/goToThinkShareViewController_FacebookAndTakeScreenshoot/to"></a>
+<code>to</code></dt><dd><p>get a screenshoot set var callFacebookVC in goToThinkShareViewControllerAndTakeScreenshoot to true.</dd>
+</dl>
+</div>
+<hr class="betweenAPIEntries"><!-- headerDoc=title:func;  uid=//apple_ref/doc/title:func/goToThinkShareViewController_TwitterAndTakeScreenshoot;   name=goToThinkShareViewController_TwitterAndTakeScreenshoot -->
+<a name="//apple_ref/doc/title:func/goToThinkShareViewController_TwitterAndTakeScreenshoot"></a>
+<h3><a name="goToThinkShareViewController_TwitterAndTakeScreenshoot">goToThinkShareViewController_TwitterAndTakeScreenshoot</a></h3>
+<hr class="afterName"><p><!-- headerDoc=abstract;uid=//apple_ref/doc/title:func/goToThinkShareViewController_TwitterAndTakeScreenshoot;name=start --><!-- begin abstract --><p>takes a screenshoot from ThinkShareViewController_Twitter
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/doc/title:func/goToThinkShareViewController_TwitterAndTakeScreenshoot;name=end --></p>
+<div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/doc/title:func/goToThinkShareViewController_TwitterAndTakeScreenshoot;name=start --><!-- a logicalPath="//apple_ref/js/econst/target //apple_ref/js/data/target //apple_ref/js/clconst/target " machineGenerated="true" --><span class="var">target</span><!-- /a -->.<!-- a logicalPath="//apple_ref/js/instm/frontMostApp //apple_ref/js/clm/frontMostApp //apple_ref/js/intfcm/frontMostApp //apple_ref/js/intfm/frontMostApp //apple_ref/js/func/frontMostApp //apple_ref/js/ftmplt/frontMostApp //apple_ref/js/defn/frontMostApp //apple_ref/js/macro/frontMostApp //apple_ref/doc/anysymbol/frontMostApp" machineGenerated="true" --><span class="function">frontMostApp</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/mainWindow //apple_ref/js/clm/mainWindow //apple_ref/js/intfcm/mainWindow //apple_ref/js/intfm/mainWindow //apple_ref/js/func/mainWindow //apple_ref/js/ftmplt/mainWindow //apple_ref/js/defn/mainWindow //apple_ref/js/macro/mainWindow //apple_ref/doc/anysymbol/mainWindow" machineGenerated="true" --><span class="function">mainWindow</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/images //apple_ref/js/clm/images //apple_ref/js/intfcm/images //apple_ref/js/intfm/images //apple_ref/js/func/images //apple_ref/js/ftmplt/images //apple_ref/js/defn/images //apple_ref/js/macro/images //apple_ref/doc/anysymbol/images" machineGenerated="true" --><span class="function">images</span><!-- /a -->()[<span class="number">2</span>].<!-- a logicalPath="//apple_ref/js/instm/images //apple_ref/js/clm/images //apple_ref/js/intfcm/images //apple_ref/js/intfm/images //apple_ref/js/func/images //apple_ref/js/ftmplt/images //apple_ref/js/defn/images //apple_ref/js/macro/images //apple_ref/doc/anysymbol/images" machineGenerated="true" --><span class="function">images</span><!-- /a -->()[<span class="number">2</span>].<!-- a logicalPath="//apple_ref/js/instm/tap //apple_ref/js/clm/tap //apple_ref/js/intfcm/tap //apple_ref/js/intfm/tap //apple_ref/js/func/tap //apple_ref/js/ftmplt/tap //apple_ref/js/defn/tap //apple_ref/js/macro/tap //apple_ref/doc/anysymbol/tap" machineGenerated="true" --><span class="function">tap</span><!-- /a -->();  <!-- headerDoc=declaration;uid=//apple_ref/doc/title:func/goToThinkShareViewController_TwitterAndTakeScreenshoot;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/goToThinkShareViewController_TwitterAndTakeScreenshoot/to;   name=goToThinkShareViewController_TwitterAndTakeScreenshoot::to -->
+<a name="//apple_ref/doc/functionparam/goToThinkShareViewController_TwitterAndTakeScreenshoot/to"></a>
+<code>to</code></dt><dd><p>get a screenshoot set var callTwitterVC in goToThinkShareViewControllerAndTakeScreenshoot to true.</dd>
+</dl>
+</div>
+<hr class="betweenAPIEntries"><!-- headerDoc=title:func;  uid=//apple_ref/doc/title:func/goToThinkShareViewControllerAndTakeScreenshoot;   name=goToThinkShareViewControllerAndTakeScreenshoot -->
+<a name="//apple_ref/doc/title:func/goToThinkShareViewControllerAndTakeScreenshoot"></a>
+<h3><a name="goToThinkShareViewControllerAndTakeScreenshoot">goToThinkShareViewControllerAndTakeScreenshoot</a></h3>
+<hr class="afterName"><p><!-- headerDoc=abstract;uid=//apple_ref/doc/title:func/goToThinkShareViewControllerAndTakeScreenshoot;name=start --><!-- begin abstract --><p>takes a screenshoot from ThinkShareViewController and its secondarily views
+Use goToThinkShareViewControllerAndTakeScreenshoot to get a current screenshoot of the ThinkShareViewController and its secondarily 
+views.
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/doc/title:func/goToThinkShareViewControllerAndTakeScreenshoot;name=end --></p>
+<div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/doc/title:func/goToThinkShareViewControllerAndTakeScreenshoot;name=start --><!-- a logicalPath="//apple_ref/js/econst/target //apple_ref/js/data/target //apple_ref/js/clconst/target " machineGenerated="true" --><span class="var">target</span><!-- /a -->.<!-- a logicalPath="//apple_ref/js/instm/frontMostApp //apple_ref/js/clm/frontMostApp //apple_ref/js/intfcm/frontMostApp //apple_ref/js/intfm/frontMostApp //apple_ref/js/func/frontMostApp //apple_ref/js/ftmplt/frontMostApp //apple_ref/js/defn/frontMostApp //apple_ref/js/macro/frontMostApp //apple_ref/doc/anysymbol/frontMostApp" machineGenerated="true" --><span class="function">frontMostApp</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/mainWindow //apple_ref/js/clm/mainWindow //apple_ref/js/intfcm/mainWindow //apple_ref/js/intfm/mainWindow //apple_ref/js/func/mainWindow //apple_ref/js/ftmplt/mainWindow //apple_ref/js/defn/mainWindow //apple_ref/js/macro/mainWindow //apple_ref/doc/anysymbol/mainWindow" machineGenerated="true" --><span class="function">mainWindow</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/tableViews //apple_ref/js/clm/tableViews //apple_ref/js/intfcm/tableViews //apple_ref/js/intfm/tableViews //apple_ref/js/func/tableViews //apple_ref/js/ftmplt/tableViews //apple_ref/js/defn/tableViews //apple_ref/js/macro/tableViews //apple_ref/doc/anysymbol/tableViews" machineGenerated="true" --><span class="function">tableViews</span><!-- /a -->()[<span class="number">0</span>].<!-- a logicalPath="//apple_ref/js/instm/cells //apple_ref/js/clm/cells //apple_ref/js/intfcm/cells //apple_ref/js/intfm/cells //apple_ref/js/func/cells //apple_ref/js/ftmplt/cells //apple_ref/js/defn/cells //apple_ref/js/macro/cells //apple_ref/doc/anysymbol/cells" machineGenerated="true" --><span class="function">cells</span><!-- /a -->()[<span class="number">6</span>].<!-- a logicalPath="//apple_ref/js/instm/tap //apple_ref/js/clm/tap //apple_ref/js/intfcm/tap //apple_ref/js/intfm/tap //apple_ref/js/func/tap //apple_ref/js/ftmplt/tap //apple_ref/js/defn/tap //apple_ref/js/macro/tap //apple_ref/doc/anysymbol/tap" machineGenerated="true" --><span class="function">tap</span><!-- /a -->();  <!-- headerDoc=declaration;uid=//apple_ref/doc/title:func/goToThinkShareViewControllerAndTakeScreenshoot;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/goToThinkShareViewControllerAndTakeScreenshoot/to;   name=goToThinkShareViewControllerAndTakeScreenshoot::to -->
+<a name="//apple_ref/doc/functionparam/goToThinkShareViewControllerAndTakeScreenshoot/to"></a>
+<code>to</code></dt><dd><p>get these screenshoots set var makeScreenshoot,var callFacebookVC,var callTwitterVC, var callEmailVC for goToThinkShareViewControllerAndTakeScreenshoot 
+to true,true,true,true</dd>
+</dl>
+</div>
+<hr class="betweenAPIEntries"><!-- headerDoc=func;  uid=//apple_ref/js/func/target.frontMostApp;   name=target.frontMostApp -->
+<a name="//apple_ref/js/func/target.frontMostApp"></a>
+<h3><a name="target.frontMostApp()">target.frontMostApp()</a></h3>
+<hr class="afterName"><p><!-- headerDoc=abstract;uid=//apple_ref/js/func/target.frontMostApp;name=start --><!-- begin abstract --><p>takes a screenshoot from RearViewController_Hauptansicht
+Use gotoRearViewControllerHauptansichtAndTakeScreenshoot to get a current screenshoot of the RearViewController_Hauptansicht.
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/js/func/target.frontMostApp;name=end --></p>
+<div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/js/func/target.frontMostApp;name=start --><!-- a logicalPath="//apple_ref/js/econst/target //apple_ref/js/data/target //apple_ref/js/clconst/target " machineGenerated="true" --><span class="var">target</span><!-- /a -->.<!-- a logicalPath="//apple_ref/js/instm/frontMostApp //apple_ref/js/clm/frontMostApp //apple_ref/js/intfcm/frontMostApp //apple_ref/js/intfm/frontMostApp //apple_ref/js/func/frontMostApp //apple_ref/js/ftmplt/frontMostApp //apple_ref/js/defn/frontMostApp //apple_ref/js/macro/frontMostApp //apple_ref/doc/anysymbol/frontMostApp" machineGenerated="true" --><span class="function">frontMostApp</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/navigationBar //apple_ref/js/clm/navigationBar //apple_ref/js/intfcm/navigationBar //apple_ref/js/intfm/navigationBar //apple_ref/js/func/navigationBar //apple_ref/js/ftmplt/navigationBar //apple_ref/js/defn/navigationBar //apple_ref/js/macro/navigationBar //apple_ref/doc/anysymbol/navigationBar" machineGenerated="true" --><span class="function">navigationBar</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/buttons //apple_ref/js/clm/buttons //apple_ref/js/intfcm/buttons //apple_ref/js/intfm/buttons //apple_ref/js/func/buttons //apple_ref/js/ftmplt/buttons //apple_ref/js/defn/buttons //apple_ref/js/macro/buttons //apple_ref/doc/anysymbol/buttons" machineGenerated="true" --><span class="function">buttons</span><!-- /a -->()["<span class="string">menu</span> <span class="string">inactive</span>"].<!-- a logicalPath="//apple_ref/js/instm/tap //apple_ref/js/clm/tap //apple_ref/js/intfcm/tap //apple_ref/js/intfm/tap //apple_ref/js/func/tap //apple_ref/js/ftmplt/tap //apple_ref/js/defn/tap //apple_ref/js/macro/tap //apple_ref/doc/anysymbol/tap" machineGenerated="true" --><span class="function">tap</span><!-- /a -->();  <!-- headerDoc=declaration;uid=//apple_ref/js/func/target.frontMostApp;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/target.frontMostApp/to;   name=target.frontMostApp::to -->
+<a name="//apple_ref/doc/functionparam/target.frontMostApp/to"></a>
+<code>to</code></dt><dd><p>get a screenshoot set var makeScreenshot for gotoRearViewControllerHauptansichtAndTakeScreenshoot to true.</dd>
+</dl>
+</div>
+<hr class="betweenAPIEntries"><!-- headerDoc=func;  uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_1;   name=target.frontMostApp -->
+<a name="//apple_ref/js/func/target.frontMostApp_DONTLINK_1"></a>
+<h3><a name="target.frontMostApp()">target.frontMostApp()</a></h3>
+<hr class="afterName"><p><!-- headerDoc=abstract;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_1;name=start --><!-- begin abstract --><p>takes a screenshoot from bpViewController
+Use goTobpViewControllerAndTakeScreenshoot to get a current screenshoot of the bpViewController.
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_1;name=end --></p>
+<div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_1;name=start --><!-- a logicalPath="//apple_ref/js/econst/target //apple_ref/js/data/target //apple_ref/js/clconst/target " machineGenerated="true" --><span class="var">target</span><!-- /a -->.<!-- a logicalPath="//apple_ref/js/instm/frontMostApp //apple_ref/js/clm/frontMostApp //apple_ref/js/intfcm/frontMostApp //apple_ref/js/intfm/frontMostApp //apple_ref/js/func/frontMostApp //apple_ref/js/ftmplt/frontMostApp //apple_ref/js/defn/frontMostApp //apple_ref/js/macro/frontMostApp //apple_ref/doc/anysymbol/frontMostApp" machineGenerated="true" --><span class="function">frontMostApp</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/mainWindow //apple_ref/js/clm/mainWindow //apple_ref/js/intfcm/mainWindow //apple_ref/js/intfm/mainWindow //apple_ref/js/func/mainWindow //apple_ref/js/ftmplt/mainWindow //apple_ref/js/defn/mainWindow //apple_ref/js/macro/mainWindow //apple_ref/doc/anysymbol/mainWindow" machineGenerated="true" --><span class="function">mainWindow</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/tableViews //apple_ref/js/clm/tableViews //apple_ref/js/intfcm/tableViews //apple_ref/js/intfm/tableViews //apple_ref/js/func/tableViews //apple_ref/js/ftmplt/tableViews //apple_ref/js/defn/tableViews //apple_ref/js/macro/tableViews //apple_ref/doc/anysymbol/tableViews" machineGenerated="true" --><span class="function">tableViews</span><!-- /a -->()[<span class="number">0</span>].<!-- a logicalPath="//apple_ref/js/instm/cells //apple_ref/js/clm/cells //apple_ref/js/intfcm/cells //apple_ref/js/intfm/cells //apple_ref/js/func/cells //apple_ref/js/ftmplt/cells //apple_ref/js/defn/cells //apple_ref/js/macro/cells //apple_ref/doc/anysymbol/cells" machineGenerated="true" --><span class="function">cells</span><!-- /a -->()[<span class="number">0</span>].<!-- a logicalPath="//apple_ref/js/instm/tap //apple_ref/js/clm/tap //apple_ref/js/intfcm/tap //apple_ref/js/intfm/tap //apple_ref/js/func/tap //apple_ref/js/ftmplt/tap //apple_ref/js/defn/tap //apple_ref/js/macro/tap //apple_ref/doc/anysymbol/tap" machineGenerated="true" --><span class="function">tap</span><!-- /a -->();  <!-- headerDoc=declaration;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_1;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/target.frontMostApp/to;   name=target.frontMostApp::to -->
+<a name="//apple_ref/doc/functionparam/target.frontMostApp/to"></a>
+<code>to</code></dt><dd><p>get a screenshoot set var makeScreenshot for goTobpViewControllerAndTakeScreenshoot to true.</dd>
+</dl>
+</div>
+<hr class="betweenAPIEntries"><!-- headerDoc=func;  uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_4;   name=target.frontMostApp -->
+<a name="//apple_ref/js/func/target.frontMostApp_DONTLINK_4"></a>
+<h3><a name="target.frontMostApp()">target.frontMostApp()</a></h3>
+<hr class="afterName"><p><!-- headerDoc=abstract;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_4;name=start --><!-- begin abstract --><p>takes a screenshoot from FavoritController
+Use gotoFavoritControllerAndTakeScreenshoot to get a current screenshoot of the FavoritController.
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_4;name=end --></p>
+<div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_4;name=start --><!-- a logicalPath="//apple_ref/js/econst/target //apple_ref/js/data/target //apple_ref/js/clconst/target " machineGenerated="true" --><span class="var">target</span><!-- /a -->.<!-- a logicalPath="//apple_ref/js/instm/frontMostApp //apple_ref/js/clm/frontMostApp //apple_ref/js/intfcm/frontMostApp //apple_ref/js/intfm/frontMostApp //apple_ref/js/func/frontMostApp //apple_ref/js/ftmplt/frontMostApp //apple_ref/js/defn/frontMostApp //apple_ref/js/macro/frontMostApp //apple_ref/doc/anysymbol/frontMostApp" machineGenerated="true" --><span class="function">frontMostApp</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/mainWindow //apple_ref/js/clm/mainWindow //apple_ref/js/intfcm/mainWindow //apple_ref/js/intfm/mainWindow //apple_ref/js/func/mainWindow //apple_ref/js/ftmplt/mainWindow //apple_ref/js/defn/mainWindow //apple_ref/js/macro/mainWindow //apple_ref/doc/anysymbol/mainWindow" machineGenerated="true" --><span class="function">mainWindow</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/tableViews //apple_ref/js/clm/tableViews //apple_ref/js/intfcm/tableViews //apple_ref/js/intfm/tableViews //apple_ref/js/func/tableViews //apple_ref/js/ftmplt/tableViews //apple_ref/js/defn/tableViews //apple_ref/js/macro/tableViews //apple_ref/doc/anysymbol/tableViews" machineGenerated="true" --><span class="function">tableViews</span><!-- /a -->()[<span class="number">0</span>].<!-- a logicalPath="//apple_ref/js/instm/cells //apple_ref/js/clm/cells //apple_ref/js/intfcm/cells //apple_ref/js/intfm/cells //apple_ref/js/func/cells //apple_ref/js/ftmplt/cells //apple_ref/js/defn/cells //apple_ref/js/macro/cells //apple_ref/doc/anysymbol/cells" machineGenerated="true" --><span class="function">cells</span><!-- /a -->()[<span class="number">1</span>].<!-- a logicalPath="//apple_ref/js/instm/tap //apple_ref/js/clm/tap //apple_ref/js/intfcm/tap //apple_ref/js/intfm/tap //apple_ref/js/func/tap //apple_ref/js/ftmplt/tap //apple_ref/js/defn/tap //apple_ref/js/macro/tap //apple_ref/doc/anysymbol/tap" machineGenerated="true" --><span class="function">tap</span><!-- /a -->();  <!-- headerDoc=declaration;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_4;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/target.frontMostApp/to;   name=target.frontMostApp::to -->
+<a name="//apple_ref/doc/functionparam/target.frontMostApp/to"></a>
+<code>to</code></dt><dd><p>get a screenshoot set var makeScreenshot for gotoFavoritControllerAndTakeScreenshoot to true.</dd>
+</dl>
+</div>
+<hr class="betweenAPIEntries"><!-- headerDoc=func;  uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_5;   name=target.frontMostApp -->
+<a name="//apple_ref/js/func/target.frontMostApp_DONTLINK_5"></a>
+<h3><a name="target.frontMostApp()">target.frontMostApp()</a></h3>
+<hr class="afterName"><p><!-- headerDoc=abstract;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_5;name=start --><!-- begin abstract --><p>takes a screenshoot from bpSettingsViewController and its secondarily views
+Use gotobpSettingsViewControllerAndTakeScreenshoot to get a current screenshoot of the bpSettingsViewController and its secondarily 
+views.
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_5;name=end --></p>
+<div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_5;name=start --><!-- a logicalPath="//apple_ref/js/econst/target //apple_ref/js/data/target //apple_ref/js/clconst/target " machineGenerated="true" --><span class="var">target</span><!-- /a -->.<!-- a logicalPath="//apple_ref/js/instm/frontMostApp //apple_ref/js/clm/frontMostApp //apple_ref/js/intfcm/frontMostApp //apple_ref/js/intfm/frontMostApp //apple_ref/js/func/frontMostApp //apple_ref/js/ftmplt/frontMostApp //apple_ref/js/defn/frontMostApp //apple_ref/js/macro/frontMostApp //apple_ref/doc/anysymbol/frontMostApp" machineGenerated="true" --><span class="function">frontMostApp</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/mainWindow //apple_ref/js/clm/mainWindow //apple_ref/js/intfcm/mainWindow //apple_ref/js/intfm/mainWindow //apple_ref/js/func/mainWindow //apple_ref/js/ftmplt/mainWindow //apple_ref/js/defn/mainWindow //apple_ref/js/macro/mainWindow //apple_ref/doc/anysymbol/mainWindow" machineGenerated="true" --><span class="function">mainWindow</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/tableViews //apple_ref/js/clm/tableViews //apple_ref/js/intfcm/tableViews //apple_ref/js/intfm/tableViews //apple_ref/js/func/tableViews //apple_ref/js/ftmplt/tableViews //apple_ref/js/defn/tableViews //apple_ref/js/macro/tableViews //apple_ref/doc/anysymbol/tableViews" machineGenerated="true" --><span class="function">tableViews</span><!-- /a -->()[<span class="number">0</span>].<!-- a logicalPath="//apple_ref/js/instm/cells //apple_ref/js/clm/cells //apple_ref/js/intfcm/cells //apple_ref/js/intfm/cells //apple_ref/js/func/cells //apple_ref/js/ftmplt/cells //apple_ref/js/defn/cells //apple_ref/js/macro/cells //apple_ref/doc/anysymbol/cells" machineGenerated="true" --><span class="function">cells</span><!-- /a -->()[<span class="number">4</span>].<!-- a logicalPath="//apple_ref/js/instm/tap //apple_ref/js/clm/tap //apple_ref/js/intfcm/tap //apple_ref/js/intfm/tap //apple_ref/js/func/tap //apple_ref/js/ftmplt/tap //apple_ref/js/defn/tap //apple_ref/js/macro/tap //apple_ref/doc/anysymbol/tap" machineGenerated="true" --><span class="function">tap</span><!-- /a -->();  <!-- headerDoc=declaration;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_5;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/target.frontMostApp/to;   name=target.frontMostApp::to -->
+<a name="//apple_ref/doc/functionparam/target.frontMostApp/to"></a>
+<code>to</code></dt><dd><p>get these screenshoots set var makeScreenshoot,var callDebuggingVC,var callCategorySettingsVC for gotobpSettingsViewControllerAndTakeScreenshoot 
+to true,true,true.</dd>
+</dl>
+</div>
+<hr class="betweenAPIEntries"><!-- headerDoc=func;  uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_8;   name=target.frontMostApp -->
+<a name="//apple_ref/js/func/target.frontMostApp_DONTLINK_8"></a>
+<h3><a name="target.frontMostApp()">target.frontMostApp()</a></h3>
+<hr class="afterName"><p><!-- headerDoc=abstract;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_8;name=start --><!-- begin abstract --><p>takes a screenshoot from bpCategorySettingsViewController
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_8;name=end --></p>
+<div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_8;name=start --><!-- a logicalPath="//apple_ref/js/econst/target //apple_ref/js/data/target //apple_ref/js/clconst/target " machineGenerated="true" --><span class="var">target</span><!-- /a -->.<!-- a logicalPath="//apple_ref/js/instm/frontMostApp //apple_ref/js/clm/frontMostApp //apple_ref/js/intfcm/frontMostApp //apple_ref/js/intfm/frontMostApp //apple_ref/js/func/frontMostApp //apple_ref/js/ftmplt/frontMostApp //apple_ref/js/defn/frontMostApp //apple_ref/js/macro/frontMostApp //apple_ref/doc/anysymbol/frontMostApp" machineGenerated="true" --><span class="function">frontMostApp</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/mainWindow //apple_ref/js/clm/mainWindow //apple_ref/js/intfcm/mainWindow //apple_ref/js/intfm/mainWindow //apple_ref/js/func/mainWindow //apple_ref/js/ftmplt/mainWindow //apple_ref/js/defn/mainWindow //apple_ref/js/macro/mainWindow //apple_ref/doc/anysymbol/mainWindow" machineGenerated="true" --><span class="function">mainWindow</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/scrollViews //apple_ref/js/clm/scrollViews //apple_ref/js/intfcm/scrollViews //apple_ref/js/intfm/scrollViews //apple_ref/js/func/scrollViews //apple_ref/js/ftmplt/scrollViews //apple_ref/js/defn/scrollViews //apple_ref/js/macro/scrollViews //apple_ref/doc/anysymbol/scrollViews" machineGenerated="true" --><span class="function">scrollViews</span><!-- /a -->()[<span class="number">0</span>].<!-- a logicalPath="//apple_ref/js/instm/buttons //apple_ref/js/clm/buttons //apple_ref/js/intfcm/buttons //apple_ref/js/intfm/buttons //apple_ref/js/func/buttons //apple_ref/js/ftmplt/buttons //apple_ref/js/defn/buttons //apple_ref/js/macro/buttons //apple_ref/doc/anysymbol/buttons" machineGenerated="true" --><span class="function">buttons</span><!-- /a -->()[<span class="number">0</span>].<!-- a logicalPath="//apple_ref/js/instm/tap //apple_ref/js/clm/tap //apple_ref/js/intfcm/tap //apple_ref/js/intfm/tap //apple_ref/js/func/tap //apple_ref/js/ftmplt/tap //apple_ref/js/defn/tap //apple_ref/js/macro/tap //apple_ref/doc/anysymbol/tap" machineGenerated="true" --><span class="function">tap</span><!-- /a -->();  <!-- headerDoc=declaration;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_8;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/target.frontMostApp/to;   name=target.frontMostApp::to -->
+<a name="//apple_ref/doc/functionparam/target.frontMostApp/to"></a>
+<code>to</code></dt><dd><p>get a screenshoot set var callCategorySettingsVC in gotobpSettingsViewControllerAndTakeScreenshoot to true.</dd>
+</dl>
+</div>
+<hr class="betweenAPIEntries"><!-- headerDoc=func;  uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_9;   name=target.frontMostApp -->
+<a name="//apple_ref/js/func/target.frontMostApp_DONTLINK_9"></a>
+<h3><a name="target.frontMostApp()">target.frontMostApp()</a></h3>
+<hr class="afterName"><p><!-- headerDoc=abstract;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_9;name=start --><!-- begin abstract --><p>takes a screenshoot from bpDebuggingViewController
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_9;name=end --></p>
+<div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_9;name=start --><!-- a logicalPath="//apple_ref/js/econst/target //apple_ref/js/data/target //apple_ref/js/clconst/target " machineGenerated="true" --><span class="var">target</span><!-- /a -->.<!-- a logicalPath="//apple_ref/js/instm/frontMostApp //apple_ref/js/clm/frontMostApp //apple_ref/js/intfcm/frontMostApp //apple_ref/js/intfm/frontMostApp //apple_ref/js/func/frontMostApp //apple_ref/js/ftmplt/frontMostApp //apple_ref/js/defn/frontMostApp //apple_ref/js/macro/frontMostApp //apple_ref/doc/anysymbol/frontMostApp" machineGenerated="true" --><span class="function">frontMostApp</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/mainWindow //apple_ref/js/clm/mainWindow //apple_ref/js/intfcm/mainWindow //apple_ref/js/intfm/mainWindow //apple_ref/js/func/mainWindow //apple_ref/js/ftmplt/mainWindow //apple_ref/js/defn/mainWindow //apple_ref/js/macro/mainWindow //apple_ref/doc/anysymbol/mainWindow" machineGenerated="true" --><span class="function">mainWindow</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/scrollViews //apple_ref/js/clm/scrollViews //apple_ref/js/intfcm/scrollViews //apple_ref/js/intfm/scrollViews //apple_ref/js/func/scrollViews //apple_ref/js/ftmplt/scrollViews //apple_ref/js/defn/scrollViews //apple_ref/js/macro/scrollViews //apple_ref/doc/anysymbol/scrollViews" machineGenerated="true" --><span class="function">scrollViews</span><!-- /a -->()[<span class="number">0</span>].<!-- a logicalPath="//apple_ref/js/instm/buttons //apple_ref/js/clm/buttons //apple_ref/js/intfcm/buttons //apple_ref/js/intfm/buttons //apple_ref/js/func/buttons //apple_ref/js/ftmplt/buttons //apple_ref/js/defn/buttons //apple_ref/js/macro/buttons //apple_ref/doc/anysymbol/buttons" machineGenerated="true" --><span class="function">buttons</span><!-- /a -->()[<span class="number">2</span>].<!-- a logicalPath="//apple_ref/js/instm/tap //apple_ref/js/clm/tap //apple_ref/js/intfcm/tap //apple_ref/js/intfm/tap //apple_ref/js/func/tap //apple_ref/js/ftmplt/tap //apple_ref/js/defn/tap //apple_ref/js/macro/tap //apple_ref/doc/anysymbol/tap" machineGenerated="true" --><span class="function">tap</span><!-- /a -->();  <!-- headerDoc=declaration;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_9;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/target.frontMostApp/to;   name=target.frontMostApp::to -->
+<a name="//apple_ref/doc/functionparam/target.frontMostApp/to"></a>
+<code>to</code></dt><dd><p>get a screenshoot set var callDebuggingVC in gotobpSettingsViewControllerAndTakeScreenshoot to true.</dd>
+</dl>
+</div>
+<hr class="betweenAPIEntries"><!-- headerDoc=func;  uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_12;   name=target.frontMostApp -->
+<a name="//apple_ref/js/func/target.frontMostApp_DONTLINK_12"></a>
+<h3><a name="target.frontMostApp()">target.frontMostApp()</a></h3>
+<hr class="afterName"><p><!-- headerDoc=abstract;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_12;name=start --><!-- begin abstract --><p>takes a screenshoot from bpAboutViewController
+Use gotobpAboutViewControllerAndTakeScreenshoot to get a current screenshoot of the bpAboutViewController.
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_12;name=end --></p>
+<div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_12;name=start --><!-- a logicalPath="//apple_ref/js/econst/target //apple_ref/js/data/target //apple_ref/js/clconst/target " machineGenerated="true" --><span class="var">target</span><!-- /a -->.<!-- a logicalPath="//apple_ref/js/instm/frontMostApp //apple_ref/js/clm/frontMostApp //apple_ref/js/intfcm/frontMostApp //apple_ref/js/intfm/frontMostApp //apple_ref/js/func/frontMostApp //apple_ref/js/ftmplt/frontMostApp //apple_ref/js/defn/frontMostApp //apple_ref/js/macro/frontMostApp //apple_ref/doc/anysymbol/frontMostApp" machineGenerated="true" --><span class="function">frontMostApp</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/mainWindow //apple_ref/js/clm/mainWindow //apple_ref/js/intfcm/mainWindow //apple_ref/js/intfm/mainWindow //apple_ref/js/func/mainWindow //apple_ref/js/ftmplt/mainWindow //apple_ref/js/defn/mainWindow //apple_ref/js/macro/mainWindow //apple_ref/doc/anysymbol/mainWindow" machineGenerated="true" --><span class="function">mainWindow</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/tableViews //apple_ref/js/clm/tableViews //apple_ref/js/intfcm/tableViews //apple_ref/js/intfm/tableViews //apple_ref/js/func/tableViews //apple_ref/js/ftmplt/tableViews //apple_ref/js/defn/tableViews //apple_ref/js/macro/tableViews //apple_ref/doc/anysymbol/tableViews" machineGenerated="true" --><span class="function">tableViews</span><!-- /a -->()[<span class="number">0</span>].<!-- a logicalPath="//apple_ref/js/instm/cells //apple_ref/js/clm/cells //apple_ref/js/intfcm/cells //apple_ref/js/intfm/cells //apple_ref/js/func/cells //apple_ref/js/ftmplt/cells //apple_ref/js/defn/cells //apple_ref/js/macro/cells //apple_ref/doc/anysymbol/cells" machineGenerated="true" --><span class="function">cells</span><!-- /a -->()[<span class="number">5</span>].<!-- a logicalPath="//apple_ref/js/instm/tap //apple_ref/js/clm/tap //apple_ref/js/intfcm/tap //apple_ref/js/intfm/tap //apple_ref/js/func/tap //apple_ref/js/ftmplt/tap //apple_ref/js/defn/tap //apple_ref/js/macro/tap //apple_ref/doc/anysymbol/tap" machineGenerated="true" --><span class="function">tap</span><!-- /a -->();  <!-- headerDoc=declaration;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_12;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/target.frontMostApp/to;   name=target.frontMostApp::to -->
+<a name="//apple_ref/doc/functionparam/target.frontMostApp/to"></a>
+<code>to</code></dt><dd><p>get a screenshoot set var makeScreenshot for gotobpAboutViewControllerAndTakeScreenshoot to true.</dd>
+</dl>
+</div>
+<hr class="betweenAPIEntries"><!-- headerDoc=func;  uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_13;   name=target.frontMostApp -->
+<a name="//apple_ref/js/func/target.frontMostApp_DONTLINK_13"></a>
+<h3><a name="target.frontMostApp()">target.frontMostApp()</a></h3>
+<hr class="afterName"><p><!-- headerDoc=abstract;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_13;name=start --><!-- begin abstract --><p>takes a screenshoot from ThinkShareViewController and its secondarily views
+Use goToThinkShareViewControllerAndTakeScreenshoot to get a current screenshoot of the ThinkShareViewController and its secondarily 
+views.
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_13;name=end --></p>
+<div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_13;name=start --><!-- a logicalPath="//apple_ref/js/econst/target //apple_ref/js/data/target //apple_ref/js/clconst/target " machineGenerated="true" --><span class="var">target</span><!-- /a -->.<!-- a logicalPath="//apple_ref/js/instm/frontMostApp //apple_ref/js/clm/frontMostApp //apple_ref/js/intfcm/frontMostApp //apple_ref/js/intfm/frontMostApp //apple_ref/js/func/frontMostApp //apple_ref/js/ftmplt/frontMostApp //apple_ref/js/defn/frontMostApp //apple_ref/js/macro/frontMostApp //apple_ref/doc/anysymbol/frontMostApp" machineGenerated="true" --><span class="function">frontMostApp</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/mainWindow //apple_ref/js/clm/mainWindow //apple_ref/js/intfcm/mainWindow //apple_ref/js/intfm/mainWindow //apple_ref/js/func/mainWindow //apple_ref/js/ftmplt/mainWindow //apple_ref/js/defn/mainWindow //apple_ref/js/macro/mainWindow //apple_ref/doc/anysymbol/mainWindow" machineGenerated="true" --><span class="function">mainWindow</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/tableViews //apple_ref/js/clm/tableViews //apple_ref/js/intfcm/tableViews //apple_ref/js/intfm/tableViews //apple_ref/js/func/tableViews //apple_ref/js/ftmplt/tableViews //apple_ref/js/defn/tableViews //apple_ref/js/macro/tableViews //apple_ref/doc/anysymbol/tableViews" machineGenerated="true" --><span class="function">tableViews</span><!-- /a -->()[<span class="number">0</span>].<!-- a logicalPath="//apple_ref/js/instm/cells //apple_ref/js/clm/cells //apple_ref/js/intfcm/cells //apple_ref/js/intfm/cells //apple_ref/js/func/cells //apple_ref/js/ftmplt/cells //apple_ref/js/defn/cells //apple_ref/js/macro/cells //apple_ref/doc/anysymbol/cells" machineGenerated="true" --><span class="function">cells</span><!-- /a -->()[<span class="number">6</span>].<!-- a logicalPath="//apple_ref/js/instm/tap //apple_ref/js/clm/tap //apple_ref/js/intfcm/tap //apple_ref/js/intfm/tap //apple_ref/js/func/tap //apple_ref/js/ftmplt/tap //apple_ref/js/defn/tap //apple_ref/js/macro/tap //apple_ref/doc/anysymbol/tap" machineGenerated="true" --><span class="function">tap</span><!-- /a -->();  <!-- headerDoc=declaration;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_13;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/target.frontMostApp/to;   name=target.frontMostApp::to -->
+<a name="//apple_ref/doc/functionparam/target.frontMostApp/to"></a>
+<code>to</code></dt><dd><p>get these screenshoots set var makeScreenshoot,var callFacebookVC,var callTwitterVC, var callEmailVC for goToThinkShareViewControllerAndTakeScreenshoot 
+to true,true,true,true</dd>
+</dl>
+</div>
+<hr class="betweenAPIEntries"><!-- headerDoc=func;  uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_16;   name=target.frontMostApp -->
+<a name="//apple_ref/js/func/target.frontMostApp_DONTLINK_16"></a>
+<h3><a name="target.frontMostApp()">target.frontMostApp()</a></h3>
+<hr class="afterName"><p><!-- headerDoc=abstract;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_16;name=start --><!-- begin abstract --><p>takes a screenshoot from ThinkShareViewController_Facebook
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_16;name=end --></p>
+<div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_16;name=start --><!-- a logicalPath="//apple_ref/js/econst/target //apple_ref/js/data/target //apple_ref/js/clconst/target " machineGenerated="true" --><span class="var">target</span><!-- /a -->.<!-- a logicalPath="//apple_ref/js/instm/frontMostApp //apple_ref/js/clm/frontMostApp //apple_ref/js/intfcm/frontMostApp //apple_ref/js/intfm/frontMostApp //apple_ref/js/func/frontMostApp //apple_ref/js/ftmplt/frontMostApp //apple_ref/js/defn/frontMostApp //apple_ref/js/macro/frontMostApp //apple_ref/doc/anysymbol/frontMostApp" machineGenerated="true" --><span class="function">frontMostApp</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/mainWindow //apple_ref/js/clm/mainWindow //apple_ref/js/intfcm/mainWindow //apple_ref/js/intfm/mainWindow //apple_ref/js/func/mainWindow //apple_ref/js/ftmplt/mainWindow //apple_ref/js/defn/mainWindow //apple_ref/js/macro/mainWindow //apple_ref/doc/anysymbol/mainWindow" machineGenerated="true" --><span class="function">mainWindow</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/images //apple_ref/js/clm/images //apple_ref/js/intfcm/images //apple_ref/js/intfm/images //apple_ref/js/func/images //apple_ref/js/ftmplt/images //apple_ref/js/defn/images //apple_ref/js/macro/images //apple_ref/doc/anysymbol/images" machineGenerated="true" --><span class="function">images</span><!-- /a -->()[<span class="number">2</span>].<!-- a logicalPath="//apple_ref/js/instm/images //apple_ref/js/clm/images //apple_ref/js/intfcm/images //apple_ref/js/intfm/images //apple_ref/js/func/images //apple_ref/js/ftmplt/images //apple_ref/js/defn/images //apple_ref/js/macro/images //apple_ref/doc/anysymbol/images" machineGenerated="true" --><span class="function">images</span><!-- /a -->()[<span class="number">1</span>].<!-- a logicalPath="//apple_ref/js/instm/tap //apple_ref/js/clm/tap //apple_ref/js/intfcm/tap //apple_ref/js/intfm/tap //apple_ref/js/func/tap //apple_ref/js/ftmplt/tap //apple_ref/js/defn/tap //apple_ref/js/macro/tap //apple_ref/doc/anysymbol/tap" machineGenerated="true" --><span class="function">tap</span><!-- /a -->();  <!-- headerDoc=declaration;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_16;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/target.frontMostApp/to;   name=target.frontMostApp::to -->
+<a name="//apple_ref/doc/functionparam/target.frontMostApp/to"></a>
+<code>to</code></dt><dd><p>get a screenshoot set var callFacebookVC in goToThinkShareViewControllerAndTakeScreenshoot to true.</dd>
+</dl>
+</div>
+<hr class="betweenAPIEntries"><!-- headerDoc=func;  uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_17;   name=target.frontMostApp -->
+<a name="//apple_ref/js/func/target.frontMostApp_DONTLINK_17"></a>
+<h3><a name="target.frontMostApp()">target.frontMostApp()</a></h3>
+<hr class="afterName"><p><!-- headerDoc=abstract;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_17;name=start --><!-- begin abstract --><p>takes a screenshoot from ThinkShareViewController_Twitter
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_17;name=end --></p>
+<div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_17;name=start --><!-- a logicalPath="//apple_ref/js/econst/target //apple_ref/js/data/target //apple_ref/js/clconst/target " machineGenerated="true" --><span class="var">target</span><!-- /a -->.<!-- a logicalPath="//apple_ref/js/instm/frontMostApp //apple_ref/js/clm/frontMostApp //apple_ref/js/intfcm/frontMostApp //apple_ref/js/intfm/frontMostApp //apple_ref/js/func/frontMostApp //apple_ref/js/ftmplt/frontMostApp //apple_ref/js/defn/frontMostApp //apple_ref/js/macro/frontMostApp //apple_ref/doc/anysymbol/frontMostApp" machineGenerated="true" --><span class="function">frontMostApp</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/mainWindow //apple_ref/js/clm/mainWindow //apple_ref/js/intfcm/mainWindow //apple_ref/js/intfm/mainWindow //apple_ref/js/func/mainWindow //apple_ref/js/ftmplt/mainWindow //apple_ref/js/defn/mainWindow //apple_ref/js/macro/mainWindow //apple_ref/doc/anysymbol/mainWindow" machineGenerated="true" --><span class="function">mainWindow</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/images //apple_ref/js/clm/images //apple_ref/js/intfcm/images //apple_ref/js/intfm/images //apple_ref/js/func/images //apple_ref/js/ftmplt/images //apple_ref/js/defn/images //apple_ref/js/macro/images //apple_ref/doc/anysymbol/images" machineGenerated="true" --><span class="function">images</span><!-- /a -->()[<span class="number">2</span>].<!-- a logicalPath="//apple_ref/js/instm/images //apple_ref/js/clm/images //apple_ref/js/intfcm/images //apple_ref/js/intfm/images //apple_ref/js/func/images //apple_ref/js/ftmplt/images //apple_ref/js/defn/images //apple_ref/js/macro/images //apple_ref/doc/anysymbol/images" machineGenerated="true" --><span class="function">images</span><!-- /a -->()[<span class="number">2</span>].<!-- a logicalPath="//apple_ref/js/instm/tap //apple_ref/js/clm/tap //apple_ref/js/intfcm/tap //apple_ref/js/intfm/tap //apple_ref/js/func/tap //apple_ref/js/ftmplt/tap //apple_ref/js/defn/tap //apple_ref/js/macro/tap //apple_ref/doc/anysymbol/tap" machineGenerated="true" --><span class="function">tap</span><!-- /a -->();  <!-- headerDoc=declaration;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_17;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/target.frontMostApp/to;   name=target.frontMostApp::to -->
+<a name="//apple_ref/doc/functionparam/target.frontMostApp/to"></a>
+<code>to</code></dt><dd><p>get a screenshoot set var callTwitterVC in goToThinkShareViewControllerAndTakeScreenshoot to true.</dd>
+</dl>
+</div>
+<hr class="betweenAPIEntries"><!-- headerDoc=func;  uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_20;   name=target.frontMostApp -->
+<a name="//apple_ref/js/func/target.frontMostApp_DONTLINK_20"></a>
+<h3><a name="target.frontMostApp()">target.frontMostApp()</a></h3>
+<hr class="afterName"><p><!-- headerDoc=abstract;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_20;name=start --><!-- begin abstract --><p>takes a screenshoot from ThinkShareViewController_Email.
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_20;name=end --></p>
+<div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_20;name=start --><!-- a logicalPath="//apple_ref/js/econst/target //apple_ref/js/data/target //apple_ref/js/clconst/target " machineGenerated="true" --><span class="var">target</span><!-- /a -->.<!-- a logicalPath="//apple_ref/js/instm/frontMostApp //apple_ref/js/clm/frontMostApp //apple_ref/js/intfcm/frontMostApp //apple_ref/js/intfm/frontMostApp //apple_ref/js/func/frontMostApp //apple_ref/js/ftmplt/frontMostApp //apple_ref/js/defn/frontMostApp //apple_ref/js/macro/frontMostApp //apple_ref/doc/anysymbol/frontMostApp" machineGenerated="true" --><span class="function">frontMostApp</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/mainWindow //apple_ref/js/clm/mainWindow //apple_ref/js/intfcm/mainWindow //apple_ref/js/intfm/mainWindow //apple_ref/js/func/mainWindow //apple_ref/js/ftmplt/mainWindow //apple_ref/js/defn/mainWindow //apple_ref/js/macro/mainWindow //apple_ref/doc/anysymbol/mainWindow" machineGenerated="true" --><span class="function">mainWindow</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/images //apple_ref/js/clm/images //apple_ref/js/intfcm/images //apple_ref/js/intfm/images //apple_ref/js/func/images //apple_ref/js/ftmplt/images //apple_ref/js/defn/images //apple_ref/js/macro/images //apple_ref/doc/anysymbol/images" machineGenerated="true" --><span class="function">images</span><!-- /a -->()[<span class="number">2</span>].<!-- a logicalPath="//apple_ref/js/instm/images //apple_ref/js/clm/images //apple_ref/js/intfcm/images //apple_ref/js/intfm/images //apple_ref/js/func/images //apple_ref/js/ftmplt/images //apple_ref/js/defn/images //apple_ref/js/macro/images //apple_ref/doc/anysymbol/images" machineGenerated="true" --><span class="function">images</span><!-- /a -->()[<span class="number">3</span>].<!-- a logicalPath="//apple_ref/js/instm/tap //apple_ref/js/clm/tap //apple_ref/js/intfcm/tap //apple_ref/js/intfm/tap //apple_ref/js/func/tap //apple_ref/js/ftmplt/tap //apple_ref/js/defn/tap //apple_ref/js/macro/tap //apple_ref/doc/anysymbol/tap" machineGenerated="true" --><span class="function">tap</span><!-- /a -->();  <!-- headerDoc=declaration;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_20;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/target.frontMostApp/to;   name=target.frontMostApp::to -->
+<a name="//apple_ref/doc/functionparam/target.frontMostApp/to"></a>
+<code>to</code></dt><dd><p>get a screenshoot set var callEmailVC in goToThinkShareViewControllerAndTakeScreenshoot to true.</dd>
+</dl>
+</div>
+<hr class="betweenAPIEntries"><!-- headerDoc=func;  uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_21;   name=target.frontMostApp -->
+<a name="//apple_ref/js/func/target.frontMostApp_DONTLINK_21"></a>
+<h3><a name="target.frontMostApp()">target.frontMostApp()</a></h3>
+<hr class="afterName"><p><!-- headerDoc=abstract;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_21;name=start --><!-- begin abstract --><p>takes a screenshoot from RearViewController_Search
+Use goToRearViewController_SearchAndTakeScreenshoot to get a current screenshoot of the RearViewController_Search.
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_21;name=end --></p>
+<div class='declaration_indent'>
+<pre><!-- headerDoc=declaration;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_21;name=start --><!-- a logicalPath="//apple_ref/js/econst/target //apple_ref/js/data/target //apple_ref/js/clconst/target " machineGenerated="true" --><span class="var">target</span><!-- /a -->.<!-- a logicalPath="//apple_ref/js/instm/frontMostApp //apple_ref/js/clm/frontMostApp //apple_ref/js/intfcm/frontMostApp //apple_ref/js/intfm/frontMostApp //apple_ref/js/func/frontMostApp //apple_ref/js/ftmplt/frontMostApp //apple_ref/js/defn/frontMostApp //apple_ref/js/macro/frontMostApp //apple_ref/doc/anysymbol/frontMostApp" machineGenerated="true" --><span class="function">frontMostApp</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/mainWindow //apple_ref/js/clm/mainWindow //apple_ref/js/intfcm/mainWindow //apple_ref/js/intfm/mainWindow //apple_ref/js/func/mainWindow //apple_ref/js/ftmplt/mainWindow //apple_ref/js/defn/mainWindow //apple_ref/js/macro/mainWindow //apple_ref/doc/anysymbol/mainWindow" machineGenerated="true" --><span class="function">mainWindow</span><!-- /a -->().<!-- a logicalPath="//apple_ref/js/instm/searchBars //apple_ref/js/clm/searchBars //apple_ref/js/intfcm/searchBars //apple_ref/js/intfm/searchBars //apple_ref/js/func/searchBars //apple_ref/js/ftmplt/searchBars //apple_ref/js/defn/searchBars //apple_ref/js/macro/searchBars //apple_ref/doc/anysymbol/searchBars" machineGenerated="true" --><span class="function">searchBars</span><!-- /a -->()[<span class="number">0</span>].<!-- a logicalPath="//apple_ref/js/instm/tap //apple_ref/js/clm/tap //apple_ref/js/intfcm/tap //apple_ref/js/intfm/tap //apple_ref/js/func/tap //apple_ref/js/ftmplt/tap //apple_ref/js/defn/tap //apple_ref/js/macro/tap //apple_ref/doc/anysymbol/tap" machineGenerated="true" --><span class="function">tap</span><!-- /a -->();  <!-- headerDoc=declaration;uid=//apple_ref/js/func/target.frontMostApp_DONTLINK_21;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/target.frontMostApp/to;   name=target.frontMostApp::to -->
+<a name="//apple_ref/doc/functionparam/target.frontMostApp/to"></a>
+<code>to</code></dt><dd><p>get a screenshoot set var makeScreenshot for goToRearViewController_SearchAndTakeScreenshoot to true and set any string you want for 
+var searchstring.</dd>
+</dl>
+</div>
+<p class="gapBeforeFooter">&nbsp;</p><hr class="afterFooter"><div class="hd_copyright_and_timestamp">
+<p class="hd_timestamp">Last Updated: Donnerstag, März 13, 2014
+</p></div>
+</td></tr></table>
+</body></html>
