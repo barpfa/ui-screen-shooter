@@ -38,10 +38,10 @@ on run argv
   set simType to item 1 of argv
   set iosVersion to item 2 of argv
 
-  set xcodePath to do shell script "xcode-select -p"
+  set xcodePath to do shell script "xcode-select -print-path"
   activate application (xcodePath & "/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone Simulator.app/Contents/MacOS/iPhone Simulator")
   tell application "System Events"
-    tell process "iOS Simulator"
+    tell process "iOS-Simulator"
       tell menu bar 1
         -- Hardware menu bar item
         tell menu bar item 5
@@ -81,7 +81,7 @@ on run argv
   -- or else the simulator be hidden when launched by instruments
   -- for some odd reason.
   tell application "System Events"
-    set visible of process "iOS Simulator" to true
+    set visible of process "iOS-Simulator" to true
   end tell
 
 end run
