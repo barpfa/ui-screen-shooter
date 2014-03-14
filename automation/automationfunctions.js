@@ -32,16 +32,15 @@ var window = target.frontMostApp().mainWindow();
 var location = {"latitude":48.15188029999999, "longitude":11.561217499999998};
 var locationIsset = target.setLocation(location);
 
-
-function gotoRearViewControllerHauptansichtAndTakeScreenshoot(makeScreenshot){
-	// App Starts in bpViewController and goes to RearViewController_Hauptansicht
-	/*!
- 	* @function gotoRearViewControllerHauptansichtAndTakeScreenshoot
- 	* @abstract takes a screenshoot from RearViewController_Hauptansicht
- 	* Use gotoRearViewControllerHauptansichtAndTakeScreenshoot to get a current screenshoot of the RearViewController_Hauptansicht.
- 	* @param to get a screenshoot set var makeScreenshot for gotoRearViewControllerHauptansichtAndTakeScreenshoot to true.
- 	*/
 	
+	/*!
+ 	* @function gotoRearViewControllerHauptansichtAndTakeScreenshoot(makeScreenshot)
+ 	* @abstract Goes to RearViewController_Hauptansicht and optional takes a screenshoot.
+ 	* @discussion Has to start in bpViewController.
+ 	* @param makeScreenshot TRUE takes a screenshoot.
+ 	*/
+ 	
+function gotoRearViewControllerHauptansichtAndTakeScreenshoot(makeScreenshot){ 	
 	target.frontMostApp().navigationBar().buttons()["menu inactive"].tap();
 	
 	if(makeScreenshot == true){
@@ -50,15 +49,20 @@ function gotoRearViewControllerHauptansichtAndTakeScreenshoot(makeScreenshot){
 	}
 }
 
-function goTobpViewControllerAndTakeScreenshoot(makeScreenshoot){
-	//go to bpViewController from RearVC
 	/*!
- 	* @function goTobpViewControllerAndTakeScreenshoot
- 	* @abstract takes a screenshoot from bpViewController
- 	* Use goTobpViewControllerAndTakeScreenshoot to get a current screenshoot of the bpViewController.
- 	* @param to get a screenshoot set var makeScreenshot for goTobpViewControllerAndTakeScreenshoot to true.
+ 	* @function goTobpViewControllerAndTakeScreenshoot(makeScreenshoot,callMainMapVC,callbpVCPriority,callbpVCThirdPartyContent)
+ 	* @abstract Goes to bpViewController and optional takes a screenshoot. 
+ 	* Then optional goes to MainMapViewController and optional takes screenshoots. 
+ 	* Then optional goes to bpViewController_Priority and optional take a screenshoot.
+ 	* Then optional goes to bpViewControllerThirdPartyContent and optional take a screenshoot.
+ 	* @discussion Has to start from bpViewController. 
+ 	* @param makeScreenshoot TRUE takes screenshoots of all shown views.
+ 	* @param callMainMapVC TRUE will call the goToMainMapViewControllerAndTakeScreenshoot function.
+ 	* @param callbpVCPriority TRUE will call the goTobpViewController_PriorityAndTakeScreenshoot function.
+ 	* @param callbpVCThirdPartyContent TRUE will call the goTobpViewControllerThirdPartyContentAndTakeScreenshoot function.
  	*/
- 	
+function goTobpViewControllerAndTakeScreenshoot(makeScreenshoot,callMainMapVC,callbpVCPriority,callbpVCThirdPartyContent){
+
 	target.frontMostApp().mainWindow().tableViews()[0].cells()[0].tap();	
 	
 	if(makeScreenshoot == true) {
@@ -66,7 +70,46 @@ function goTobpViewControllerAndTakeScreenshoot(makeScreenshoot){
 		captureLocalizedScreenshot("bpViewController");
 	}
 	
-	//go to MainMapViewController
+	if(callMainMapVC == true) {
+		goToMainMapViewControllerAndTakeScreenshoot(makeScreenshoot);
+	}
+	
+	if(callbpVCPriority == true) {
+		goTobpViewController_PriorityAndTakeScreenshoot(makeScreenshoot);
+	}
+	
+	if(callbpVCThirdPartyContent == true) {
+		goTobpViewControllerThirdPartyContentAndTakeScreenshoot(makeScreenshoot);
+	}
+}
+
+	/*!
+ 	* @function goTobpViewControllerThirdPartyContentAndTakeScreenshoot(makeScreenshoot)
+ 	* @abstract Goes to bpViewControllerThirdPartyContent and optional takes a screenshoot. 
+ 	* @discussion Has to start from bpViewController. 
+ 	* @param makeScreenshoot TRUE takes a screenshoots.
+ 	*/
+function goTobpViewControllerThirdPartyContentAndTakeScreenshoot(makeScreenshoot) {
+	
+	target.frontMostApp().navigationBar().segmentedControls()[0].buttons()[2].tap();
+
+	if(makeScreenshoot == true) {
+		target.delay(1);
+		captureLocalizedScreenshot("bpViewController_ThirdPartyContent");
+		}
+
+	target.frontMostApp().navigationBar().segmentedControls()[0].buttons()[2].tap();	
+}
+
+
+	/*!
+ 	* @function goToMainMapViewControllerAndTakeScreenshoot(makeScreenshoot)
+ 	* @abstract Goes to MainMapViewController and optional takes a screenshoot. 
+ 	* @discussion Has to start from bpViewController. 
+ 	* @param makeScreenshoot TRUE takes a screenshoot.
+ 	*/
+function goToMainMapViewControllerAndTakeScreenshoot(makeScreenshoot){
+
 	target.frontMostApp().navigationBar().segmentedControls()[0].buttons()[0].tap();
 
 	if(makeScreenshoot == true) {
@@ -83,37 +126,35 @@ function goTobpViewControllerAndTakeScreenshoot(makeScreenshoot){
 
 	target.frontMostApp().navigationBar().segmentedControls()[0].buttons()[0].tap();
 	target.delay(1);
+}
+	/*!
+ 	* @function goTobpViewController_PriorityAndTakeScreenshoot(makeScreenshoot)
+ 	* @abstract Goes to bpViewController_Priority and optional takes a screenshoot. 
+ 	* @discussion Has to start from bpViewController. 
+ 	* @param makeScreenshoot TRUE takes a screenshoot.
+ 	*/
+	//go to bPViewController_Priority
+function goTobpViewController_PriorityAndTakeScreenshoot(makeScreenshoot) {
 
-	//go to bPViewControllerPriority
 	target.frontMostApp().navigationBar().segmentedControls()[0].buttons()[1].tap();
 
 	if(makeScreenshoot == true) {
 		target.delay(1);
-		captureLocalizedScreenshot("bPViewController_Priority");
+		captureLocalizedScreenshot("bpViewController_Priority");
 		}
 
 	target.frontMostApp().navigationBar().segmentedControls()[0].buttons()[1].tap();
 	target.delay(1);
-
-	//go to bPViewControllerThirdPartyContent
-	target.frontMostApp().navigationBar().segmentedControls()[0].buttons()[2].tap();
-
-	if(makeScreenshoot == true) {
-		target.delay(1);
-		captureLocalizedScreenshot("bPViewController_ThirdPartyContent");
-		}
-
-	target.frontMostApp().navigationBar().segmentedControls()[0].buttons()[2].tap();	
 }
 
-function gotoFavoritControllerAndTakeScreenshoot(makeScreenshoot){
-	// go to FavoritController from RearViewController_Hauptansicht
 	/*!
- 	* @function gotoFavoritControllerAndTakeScreenshoot
- 	* @abstract takes a screenshoot from FavoritController
- 	* Use gotoFavoritControllerAndTakeScreenshoot to get a current screenshoot of the FavoritController.
- 	* @param to get a screenshoot set var makeScreenshot for gotoFavoritControllerAndTakeScreenshoot to true.
+ 	* @function gotoFavoritControllerAndTakeScreenshoot(makeScreenshoot)
+ 	* @abstract Goes to FavoritController and optional take a screenshoot.
+ 	* @discussion Has to start from RearViewController_Hauptansicht.
+ 	* @param makeScreenshoot TRUE takes a screenshoot.
  	*/
+function gotoFavoritControllerAndTakeScreenshoot(makeScreenshoot){
+	
 	target.frontMostApp().mainWindow().tableViews()[0].cells()[1].tap();
 	
 	if(makeScreenshoot == true) {	
@@ -123,17 +164,18 @@ function gotoFavoritControllerAndTakeScreenshoot(makeScreenshoot){
 	target.frontMostApp().navigationBar().buttons()["menu inactive"].tap();
 }
 
-function gotobpSettingsViewControllerAndTakeScreenshoot(makeScreenshoot,callDebuggingVC,callCategorySettingsVC) {
-	// go to  bpSettingsViewController from RearViewController_Hauptansicht
 	/*!
- 	* @function gotobpSettingsViewControllerAndTakeScreenshoot
- 	* @abstract takes a screenshoot from bpSettingsViewController and its secondarily views
- 	* Use gotobpSettingsViewControllerAndTakeScreenshoot to get a current screenshoot of the bpSettingsViewController and its secondarily 
- 	* views.
- 	* @param to get these screenshoots set var makeScreenshoot,var callDebuggingVC,var callCategorySettingsVC for gotobpSettingsViewControllerAndTakeScreenshoot 
- 	* to true,true,true.
+ 	* @function gotobpSettingsViewControllerAndTakeScreenshoot(makeScreenshoot,callDebuggingVC,callCategorySettingsVC)
+ 	* @abstract Goes to bpSettingsViewController and optional take a screenshoot.  
+ 	* Then optional goes to bpCategorySettingsViewController and optional take a screenshoot.
+ 	* Then optional goes to bpDebuggingViewController and optional take a screenshoot.
+ 	* @discussion Has to start from RearViewController_Hauptansicht.
+ 	* @param makeScreenshoot TRUE takes screenshoots of all shown views.
+ 	* @param callDebuggingVC TRUE will call the gotobpDebuggingViewControllerAndTakeScreenshoot function.
+ 	* @param callCategorySettingsVC TRUE will call the otobpCategorySettingsViewControllerAndTakeScreenshot function.
  	*/
- 	
+function gotobpSettingsViewControllerAndTakeScreenshoot(makeScreenshoot,callDebuggingVC,callCategorySettingsVC) {
+	
 	target.frontMostApp().mainWindow().tableViews()[0].cells()[4].tap();
 	
 	if(makeScreenshoot == true) {
@@ -142,61 +184,57 @@ function gotobpSettingsViewControllerAndTakeScreenshoot(makeScreenshoot,callDebu
 	}
 	
 	if(callCategorySettingsVC == true){
-		gotobpCategorySettingsViewControllerAndTakeScreenshot(true);
+		gotobpCategorySettingsViewControllerAndTakeScreenshoot(makeScreenshoot);
 	}
 	
 	if(callDebuggingVC == true){
-		gotobpDebuggingViewControllerAndTakeScreenshoot(true);
+		gotobpDebuggingViewControllerAndTakeScreenshoot(makeScreenshoot);
 	}
-	//back to RearViewController_Hauptansicht	
 	target.frontMostApp().navigationBar().buttons()["menu inactive"].tap();
 }	
 
-function gotobpCategorySettingsViewControllerAndTakeScreenshot(makeScreenshoot) {
-	//go to bpCategorySettingsViewController from bpSettingsViewController
 	/*!
- 	* @function gotobpCategorySettingsViewControllerAndTakeScreenshot
- 	* @abstract takes a screenshoot from bpCategorySettingsViewController
- 	* @param to get a screenshoot set var callCategorySettingsVC in gotobpSettingsViewControllerAndTakeScreenshoot to true.
+ 	* @function gotobpCategorySettingsViewControllerAndTakeScreenshoot(makeScreenshoot)
+ 	* @abstract Goes to bpCategorySettingsViewController and optional takes a screenshoot. 
+ 	* @discussion Has to start from bpSettingsViewController. 
+ 	* @param makeScreenshoot TRUE takes a screenshoot.
  	*/
- 	
+function gotobpCategorySettingsViewControllerAndTakeScreenshoot(makeScreenshoot) {
+	
 	target.frontMostApp().mainWindow().scrollViews()[0].buttons()[0].tap();
 	
 	if(makeScreenshoot == true) {
 		target.delay(1);
 		captureLocalizedScreenshot("bpCategorySettingsViewController");
 	}
-	//back to bpSettingsViewController
 	target.frontMostApp().navigationBar().buttons()["backbuttoninactive"].tap();
 }
 
-function gotobpDebuggingViewControllerAndTakeScreenshoot(makeScreenshoot) {
-	// go to gotobpDebuggingViewController from bpSettingsViewController
 	/*!
- 	* @function gotobpDebuggingViewControllerAndTakeScreenshoot
- 	* @abstract takes a screenshoot from bpDebuggingViewController
- 	* @param to get a screenshoot set var callDebuggingVC in gotobpSettingsViewControllerAndTakeScreenshoot to true.
+ 	* @function gotobpDebuggingViewControllerAndTakeScreenshoot(makeScreenshoot)
+ 	* @abstract Goes to bpDebuggingViewController and optional takes a screenshoot. 
+ 	* @discussion Has to start from bpSettingsViewController. 
+ 	* @param makeScreenshoot TRUE takes a screenshoot.
  	*/
- 	
+function gotobpDebuggingViewControllerAndTakeScreenshoot(makeScreenshoot) {
+	
 	target.frontMostApp().mainWindow().scrollViews()[0].buttons()[2].tap();
 	
 	if(makeScreenshoot == true) {
 		target.delay(1);
 		captureLocalizedScreenshot("bpDebuggingViewController");
 	}
-	//back to bpSettingsViewController
 	target.frontMostApp().navigationBar().buttons()["backbuttoninactive"].tap();
 }
 
-function gotobpAboutViewControllerAndTakeScreenshoot(makeScreenshoot) {
-	// go to bpAboutViewController from RearViewController_Hauptansicht
 	/*!
- 	* @function gotobpAboutViewControllerAndTakeScreenshoot
- 	* @abstract takes a screenshoot from bpAboutViewController
- 	* Use gotobpAboutViewControllerAndTakeScreenshoot to get a current screenshoot of the bpAboutViewController.
- 	* @param to get a screenshoot set var makeScreenshot for gotobpAboutViewControllerAndTakeScreenshoot to true.
+ 	* @function gotobpAboutViewControllerAndTakeScreenshoot(makeScreenshoot)
+ 	* @abstract Goes to bpAboutViewController and optional takes a screenshoot.
+ 	* @discussion Has to start from RearViewController_Hauptansicht.
+ 	* @param makeScreenshoot TRUE takes a screenshoot.
  	*/
- 	
+function gotobpAboutViewControllerAndTakeScreenshoot(makeScreenshoot) {
+	
 	target.frontMostApp().mainWindow().tableViews()[0].cells()[5].tap();
 	
 	if(makeScreenshoot == true){
@@ -207,18 +245,20 @@ function gotobpAboutViewControllerAndTakeScreenshoot(makeScreenshoot) {
 	target.frontMostApp().navigationBar().buttons()["menu inactive"].tap();
 }
 
-
-
-function goToThinkShareViewControllerAndTakeScreenshoot(makeScreenshoot,callFacebookVC,callTwitterVC,callEmailVC) {
-	//go to ThinkShareViewController from RearViewController_Hauptansicht
 	/*!
- 	* @function goToThinkShareViewControllerAndTakeScreenshoot
- 	* @abstract takes a screenshoot from ThinkShareViewController and its secondarily views
- 	* Use goToThinkShareViewControllerAndTakeScreenshoot to get a current screenshoot of the ThinkShareViewController and its secondarily 
- 	* views.
- 	* @param to get these screenshoots set var makeScreenshoot,var callFacebookVC,var callTwitterVC, var callEmailVC for goToThinkShareViewControllerAndTakeScreenshoot 
- 	* to true,true,true,true
+ 	* @function goToThinkShareViewControllerAndTakeScreenshoot(makeScreenshoot,callFacebookVC,callTwitterVC,callEmailVC)
+ 	* @abstract Goes to ThinkShareViewController and optional takes a screenshoot. 
+ 	* Then optional goes to ThinkShareViewController_Facebook and take a screenshoot.
+ 	* Then optional goes to ThinkShareViewController_Twitter and take a screenshoot.
+ 	* Then optional goes to ThinkShareViewController_Email and take a screenshoot.
+ 	* @discussion Has to start from RearViewController_Hauptansicht.
+ 	* @param  makeScreenshoot TRUE takes a screenshoot.
+ 	* @param  callFacebookVC TRUE will call the goToThinkShareViewController_FacebookAndTakeScreenshoot function.
+ 	* @param  callTwitterVC TRUE will call the goToThinkShareViewController_TwitterAndTakeScreenshoot function.
+ 	* @param  callEmailVC TRUE will call the goToThinkShareViewController_EmailAndTakeScreenshoot function.
  	*/
+function goToThinkShareViewControllerAndTakeScreenshoot(makeScreenshoot,callFacebookVC,callTwitterVC,callEmailVC) {
+	
 	target.frontMostApp().mainWindow().tableViews()[0].cells()[6].tap();
 	
 	if(makeScreenshoot == true){
@@ -243,16 +283,15 @@ function goToThinkShareViewControllerAndTakeScreenshoot(makeScreenshoot,callFace
 	//back to RearViewController_Hauptansicht
 	target.frontMostApp().navigationBar().buttons()["menu inactive"].tap();
 	
-}
-
-function goToThinkShareViewController_FacebookAndTakeScreenshoot(makeScreenshoot){
-	//go to ThinkShareViewController_Facebook from ThinkShareViewController
+}	
 	/*!
- 	* @function goToThinkShareViewController_FacebookAndTakeScreenshoot
- 	* @abstract takes a screenshoot from ThinkShareViewController_Facebook
- 	* @param to get a screenshoot set var callFacebookVC in goToThinkShareViewControllerAndTakeScreenshoot to true.
+ 	* @function goToThinkShareViewController_FacebookAndTakeScreenshoot(makeScreenshoot)
+ 	* @abstract Goes to ThinkShareViewController_Facebook and optional takes a screenshoot. 
+ 	* @discussion Has to start from ThinkShareViewController. 
+ 	* @param makeScreenshoot TRUE takes a screenshoot.
  	*/
- 	
+function goToThinkShareViewController_FacebookAndTakeScreenshoot(makeScreenshoot){
+	
 	target.frontMostApp().mainWindow().images()[2].images()[1].tap();
 	// Alert detected. Expressions for handling alerts should be moved into the UIATarget.onAlert function definition.
 	if(makeScreenshoot == true){
@@ -260,15 +299,14 @@ function goToThinkShareViewController_FacebookAndTakeScreenshoot(makeScreenshoot
 		captureLocalizedScreenshot("ThinkShareViewController_Facebook");
 	}
 }
-
-function goToThinkShareViewController_TwitterAndTakeScreenshoot(makeScreenshoot){
-	//go to ThinkShareViewController_Twitter from ThinkShareViewController
 	/*!
- 	* @function goToThinkShareViewController_TwitterAndTakeScreenshoot
- 	* @abstract takes a screenshoot from ThinkShareViewController_Twitter
- 	* @param to get a screenshoot set var callTwitterVC in goToThinkShareViewControllerAndTakeScreenshoot to true.
+ 	* @function goToThinkShareViewController_TwitterAndTakeScreenshoot(makeScreenshoot)
+ 	* @abstract Goes to ThinkShareViewController_Twitter and optional takes a screenshoot. 
+ 	* @discussion Has to start from ThinkShareViewController. 
+ 	* @param makeScreenshoot TRUE takes a screenshoot.
  	*/
- 	
+function goToThinkShareViewController_TwitterAndTakeScreenshoot(makeScreenshoot){
+	
 	target.frontMostApp().mainWindow().images()[2].images()[2].tap();
 	// Alert detected. Expressions for handling alerts should be moved into the UIATarget.onAlert function definition.
 	if(makeScreenshoot == true){
@@ -276,15 +314,14 @@ function goToThinkShareViewController_TwitterAndTakeScreenshoot(makeScreenshoot)
 		captureLocalizedScreenshot("ThinkShareViewController_Twitter");
 	}
 }
-
-function goToThinkShareViewController_EmailAndTakeScreenshoot(makeScreenshoot){
-	//go to ThinkShareViewController_Email from ThinkShareViewController
 	/*!
- 	* @function goToThinkShareViewController_EmailAndTakeScreenshoot
- 	* @abstract takes a screenshoot from ThinkShareViewController_Email.
- 	* @param to get a screenshoot set var callEmailVC in goToThinkShareViewControllerAndTakeScreenshoot to true.
+ 	* @function goToThinkShareViewController_EmailAndTakeScreenshoot(makeScreenshoot)
+ 	* @abstract Goes to ThinkShareViewController_Email and optional takes a screenshoot. 
+ 	* @discussion Has to start from ThinkShareViewController. 
+ 	* @param makeScreenshoot TRUE takes a screenshoot.
  	*/
- 	
+function goToThinkShareViewController_EmailAndTakeScreenshoot(makeScreenshoot){
+	
 	target.frontMostApp().mainWindow().images()[2].images()[3].tap();
 	
 	if(makeScreenshoot == true){
@@ -296,17 +333,15 @@ function goToThinkShareViewController_EmailAndTakeScreenshoot(makeScreenshoot){
 	target.delay(2);
 	target.frontMostApp().actionSheet().buttons()[0].tap();
 }
-
-function goToRearViewController_SearchAndTakeScreenshoot(makeScreenshoot,searchString) {
-	//go to RearViewControllerSearch from RearViewController_Hauptansicht
 	/*!
- 	* @function goToRearViewController_SearchAndTakeScreenshoot
- 	* @abstract takes a screenshoot from RearViewController_Search
- 	* Use goToRearViewController_SearchAndTakeScreenshoot to get a current screenshoot of the RearViewController_Search.
- 	* @param to get a screenshoot set var makeScreenshot for goToRearViewController_SearchAndTakeScreenshoot to true and set any string you want for 
- 	* var searchstring.
+ 	* @function goToRearViewController_SearchAndTakeScreenshoot(makeScreenshoot,searchString)
+ 	* @abstract Goes to RearViewController_Search and optional set a search via searchString, then optional takes a screenshoot.
+ 	* @discussion Has to start from RearViewController_Hauptansicht.
+ 	* @param makeScreenshoot TRUE takes a screenshoot.
+ 	* @param searchString Set a string (e.g. "House").
  	*/
- 	
+function goToRearViewController_SearchAndTakeScreenshoot(makeScreenshoot,searchString) {
+	
 	target.frontMostApp().mainWindow().searchBars()[0].tap();
 	target.frontMostApp().keyboard().typeString(searchString);
 	target.frontMostApp().keyboard().typeString("\n");	
